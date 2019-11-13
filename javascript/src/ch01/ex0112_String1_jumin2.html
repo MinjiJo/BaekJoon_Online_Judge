@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String 객체의 메소드 활용</title>
+</head>
+<body>
+<h3>String 객체의 메소드 활용</h3><hr>
+<script>
+	var jumin = prompt("주민번호를 입력하세요", "810908-1234567");
+	var check=false;	
+	if(jumin.length != 14){
+		alert("주민번호의 길이는 14개 입니다");
+	} else if(isNaN(jumin.substr(0,6))){
+		alert("앞자리 형식을 확인하세요");
+	} else if(jumin.substr(6,1) != "-"){
+		alert('앞자리 입력 후 -을 입력하세요');
+	} else if(isNaN(jumin.substr(7,7))){
+		alert('뒷자리 형식을 확인하세요');
+	} else {
+		var test = jumin.substr(7,1);
+		if(test == 1 || test == 3){
+			document.write("남자")
+			document.body.style.background = "purple";
+		}else if(test == 2 || test == 4){
+			document.write("여자")
+			document.body.style.background = "pink";
+		}
+		check=true
+	}
+	if(!check)
+		document.write("형식에 맞지 않습니다.");
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>innerHTML 속성</title>
+<style>
+	table { border: 1px solid white; margin: 10px auto;}
+	caption { color: green; font-size: 30px; }
+	tr { text-align: center; height: 40px; }
+	tr:nth-child(2n+1) { background-color: green; }
+	tr:hover { background-color: pink; }
+	th { background-color: black; color: white;}
+	td:first-child { width: 100px;}
+	td:last-child { width: 500px;} 
+</style>
+</head>
+<body>
+	<p>
+	저는 안 보여요~
+	Title: 간단한 화면 출력
+	</p>
+	<script>
+		var title1 = '대한민국 전국 맛집';
+		var title2 = '지적 대화를 위한 넓고 얇은 지식';
+		var title3 = '베스트셀러 절대로 읽지 마라';
+		var list;
+		list = '<table>';
+		list += '<caption>베스트셀러</caption>';
+		list += '<thead><tr> <th>순위</th> <th>제목</th> </tr></thead>';
+		list += '<tbody>';
+		list += '<tr><td>1</td> <td>' + title1 + '</td></tr>';
+		list += '<tr><td>2</td> <td>' + title2 + '</td></tr>';
+		list += '<tr><td>3</td> <td>' + title3 + '</td></tr>';
+		list += '</tbody>';
+		list += '</table>';
+		
+		/*
+			- body의 내용을 다시 쓰기 때문에 앞의 <p> 태그 내용이 나오지 않습니다.
+			- script가 header에 있다면 아무것도 나오지 않습니다.
+		 	  body가 생성되기 전에 body의 속성을 이용했기 때문입니다.
+		*/
+		document.body.innerHTML += list;
+	</script>
+	<p>
+		Title2: 간단한 화면 출력
+	</p>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- 
+디폴트 이벤트 : 일부 HTML 태그는 이미 이벤트 리스너가 있습니다.
+			이러한 것을 디폴트 이벤트라고 합니다.
+예를 들어 a태그는 클릭하면 다른 페이지로 이동하는데 이것이 a태그가 가진 디폴트 이벤트입니다.
+또한 입력 양식의 submit 버튼을 누르면 자동으로 입력 양식을 제출하고 페이지를
+새로고침하는 것이 디폴트 이벤트입니다.
+
+디폴트 이벤트 제거하는 방법
+1. obj.onsubmit = function(){
+			.....
+			return false;
+	}
+2. event.preventDefault()를 사용하는 경우
+	<a href="http://www.naver.com"
+		onclick="event.preventDefault()">
+		
+3. function whenSubmit() {
+			.....
+			return false;
+	}
+	<form onsubmit = "return whenSubmit()">
+ -->
+<title>Insert title here</title>
+<style>
+body{margin:20px auto}
+filedset{margin:0 auto;width:600px;}
+form{margin:0 auto; width:700px;}
+label{display:inline-block;width:150px;color:purple;text-align:right;}
+input{border-radius:3px; border:1px solid green; height: 23px; width:200px; margin-bottom:5px}
+input:focus{outline:none; border:1px dotted green}
+input[type="submit"]{background:green; height:30px; color: white; display:inline-block; margin-left:24%;}
+input[type="submit"]:hover{opacity:0.8;cursor:pointer}
+span{color: red;}
+</style>
+<script>
+function whenSubmit(){
+	var name = document.getElementById("name");
+	var name_message = document.getElementById("name_message");
+	
+	var pass = document.getElementById("pass");
+	var pass_message = document.getElementById("pass_message");
+	
+	var passCheck = document.getElementById("pass-check");
+	var passcheck_message = document.getElementById("passcheck_message");
+	
+	name_message.innerHTML = "";
+	pass_message.innerHTML = "";
+	passcheck_message.innerHTML = "";
+	
+	var count = 0;
+	if(name.value == ''){
+		name_message.innerHTML="이름을 입력하세요";
+		name.focus();
+		count++;
+	}
+	
+	if(pass.value == ''){
+		pass_message.innerHTML = "비밀번호를 입력하세요";
+		if(count == 0 )
+			pass.focus();
+		count++;
+	}
+	
+	if(passCheck.value == ''){
+		passcheck_message.innerHTML = "비밀번호 확인을 입력하세요";
+		if(count == 0)
+			passCheck.focus();
+		count++;
+	}
+	
+	if(count == 0){
+		//비밀번호가 같은지 확인합니다.
+		if(pass.value == passCheck.value){
+			alert('성공');
+		} else {
+			alert('비밀번호가 다릅니다. 다시 입력해 주세요');
+			pass.value='';
+			passCheck.value='';
+			pass.focus();
+			return false;
+		}
+	} else {
+		return false;
+	}
+}
+</script>
+</head>
+<body>
+<!-- 인라인 모델의 form태그 onsubmit 이벤트 속성에 return 함수() 형태로 입력합니다. -->
+<form onsubmit="return whenSubmit()" action="ex0201_domtree.html">
+	<fieldset>
+		<legend>회원가입 폼</legend>
+				<label for="name">이름</label>
+				<input type="text" name="name" id="name">
+				<span id="name_message"></span><br>
+				
+				<label for="pass">비밀번호</label>
+				<input type="password" name="pass" id="pass">
+				<span id="pass_message"></span><br>
+				
+				<label for="pass-check">비밀번호 확인</label>
+				<input type="password" id="pass-check">
+				<span id="passcheck_message"></span><br>
+				
+				<input type="submit" value="제출">
+	</fieldset>
+</form>
+</body>
+</html>

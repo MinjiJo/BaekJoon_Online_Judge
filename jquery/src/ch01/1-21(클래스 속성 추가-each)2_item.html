@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="../js/jquery-3.4.1.js"></script>
+<!-- jQuery 배열 관리
+	 jQuery로 배열을 관리할 때는 each() 메서드를 사용합니다.
+	 
+	-each() 메서드는 일치하는 각각의 요소에 대해 매개변수로 작성한 함수를 실행합니다.
+	-each() 메서드는 다음과 같이 두 가지 형태로 사용합니다.
+	 1. $(selector).each(function(index, item){})
+	 	첫번째 매개변수 -index(사용된 배열의 index)
+	 	두번째 매개변수 - item(index에 해당하는 요소)
+	 	
+	 2. $.each(object, function(index, item){}) -->
+<script>
+	$(document).ready(function(){
+		//변수를 선언
+		var array = [
+			{name:"네이버", link : "http://www.naver.com"},
+			{name:"다음",  link : "http://www.daum.net"},
+			{name:"구글",  link : "http://www.google.com"}
+		];
+		
+		var output = '';
+		
+		$.each(array, function(index, item){
+			output += '<a href="' + item.link + '">';
+			output += '	  <h1>'	  + index + '.' + item.name
+					   + '</h1>';
+			output += '</a>';
+		});
+		
+		document.body.innerHTML += output;
+	});
+</script>
+</head>
+<body>
+</body>
+</html>

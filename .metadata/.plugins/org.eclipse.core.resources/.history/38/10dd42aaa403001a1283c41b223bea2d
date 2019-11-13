@@ -1,0 +1,309 @@
+package homework_191018;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class DAO {
+	PreparedStatement pstmt = null;
+	Connection conn = null;
+	
+	ArrayList<Object[]> selectAll() {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select * from board " + 
+				"order by BOARD_RE_REF desc, " + 
+				"BOARD_RE_SEQ asc");
+		ArrayList<Object[]> arrlist = new ArrayList<Object[]>();
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement(sql.toString());
+			ResultSet rs = pstmt.executeQuery();		
+			while (rs.next()) {
+				int num = rs.getInt("BOARD_NUM");
+				String name = rs.getString("BOARD_NAME");
+				String pass = rs.getString("BOARD_PASS");
+				String subject = rs.getString("BOARD_SUBJECT");
+				String content = rs.getString("BOARD_CONTENT");
+				String file = rs.getString("BOARD_FILE");
+				String original = rs.getString("BOARD_ORIGINAL");
+				int re_ref = rs.getInt("BOARD_RE_REF");
+				int re_lev = rs.getInt("BOARD_RE_LEV");
+				int re_seq = rs.getInt("BOARD_RE_SEQ");
+				int readcount = rs.getInt("BOARD_READCOUNT");
+				Date date = rs.getDate("BOARD_DATE");
+				Object[] obj = {num, name, pass, subject, content, file, original, re_ref, re_lev, re_seq, readcount, date};
+				arrlist.add(obj);
+			}
+		} catch (SQLException se) {
+			System.out.println(se.getMessage());
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return arrlist;
+	}
+	
+	void insert(String name, String pass, String subject, String content) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("insert into board(BOARD_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,"
+				+ "BOARD_CONTENT,BOARD_RE_REF,"
+				+ "BOARD_RE_LEV,BOARD_RE_SEQ,BOARD_READCOUNT,"
+				+ "BOARD_DATE) "
+				+ "values(board_seq.nextval,?,?,?,"
+				+ "?,board_seq.nextval,"
+				+ "0,0,0,"
+				+ "sysdate)");
+		
+		try {
+			conn = ConnUtil.getConnection();
+			
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setString(1, name);
+			pstmt.setString(2, pass);
+			pstmt.setString(3, subject);
+			pstmt.setString(4, content);
+			
+			int result = pstmt.executeUpdate();
+			System.out.println(result + "줄 db에 반영됨");
+		} catch (SQLException se) {
+			System.out.println(se.getMessage());
+			se.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	}
+	
+	/*
+	int max_num() {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select MAX(BOARD_NUM) "
+				+ "from board");
+		
+		int result = 0;
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement(sql.toString());
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				result = rs.getInt("MAX(BOARD_NUM)");
+			}
+		} catch (SQLException se) {
+			System.out.println(se.getMessage());
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return result;
+	}
+	*/
+	
+	ArrayList<Object[]> select() {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select * from board "
+				+ "where BOARD_NUM=("
+				+ "select MAX(BOARD_NUM) "
+				+ "from board)");
+		ArrayList<Object[]> arrlist = new ArrayList<Object[]>();
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement(sql.toString());
+			ResultSet rs = pstmt.executeQuery();		
+			while (rs.next()) {
+				int num = rs.getInt("BOARD_NUM");
+				String name = rs.getString("BOARD_NAME");
+				String pass = rs.getString("BOARD_PASS");
+				String subject = rs.getString("BOARD_SUBJECT");
+				String content = rs.getString("BOARD_CONTENT");
+				String file = rs.getString("BOARD_FILE");
+				String original = rs.getString("BOARD_ORIGINAL");
+				int re_ref = rs.getInt("BOARD_RE_REF");
+				int re_lev = rs.getInt("BOARD_RE_LEV");
+				int re_seq = rs.getInt("BOARD_RE_SEQ");
+				int readcount = rs.getInt("BOARD_READCOUNT");
+				Date date = rs.getDate("BOARD_DATE");
+				Object[] obj = {num, name, pass, subject, content, file, original, re_ref, re_lev, re_seq, readcount, date};
+				arrlist.add(obj);
+			}
+		} catch (SQLException se) {
+			System.out.println(se.getMessage());
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return arrlist;
+	}
+	
+	void re_insert(String name, String pass, String subject, String content, int num, int level_num) {
+		StringBuilder sql = new StringBuilder();
+			
+		sql.append("UPDATE BOARD "
+				+ "SET BOARD_RE_SEQ = BOARD_RE_SEQ + 1 "
+				+ "WHERE BOARD_RE_REF = ? "
+				+ "AND BOARD_RE_SEQ>=?;");
+		
+		try {
+			conn = ConnUtil.getConnection();
+			
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setInt(1, num);
+			pstmt.setInt(2, level_num);
+			
+			int result = pstmt.executeUpdate();
+			System.out.println(result + "RE_SEQ 1씩 증가 반영됨");
+		} catch (SQLException se) {
+			System.out.println(se.getMessage());
+			se.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		
+		StringBuilder sql2 = new StringBuilder();
+		
+		sql2.append("insert into board(BOARD_NUM,BOARD_NAME,BOARD_PASS,BOARD_SUBJECT,"
+				+ "BOARD_CONTENT,BOARD_RE_REF,"
+				+ "BOARD_RE_LEV,BOARD_RE_SEQ,BOARD_READCOUNT,"
+				+ "BOARD_DATE) "
+				+ "values(board_seq.nextval,?,?,?,"
+				+ "?,?,"
+				+ "?,?,0,"
+				+ "sysdate)");
+		
+		String output = "";
+		for(int i = 0; i <= num + 1; i++) {
+			output += "  Re:";
+		}
+		
+		try {
+			conn = ConnUtil.getConnection();
+			
+			pstmt = conn.prepareStatement(sql2.toString());
+			pstmt.setString(1, name);
+			pstmt.setString(2, pass);
+			pstmt.setString(3, output + subject);
+			pstmt.setString(4, content);
+			pstmt.setInt(5, num);
+			pstmt.setInt(6, level_num+1);
+			pstmt.setInt(7, level_num+1);
+			
+			int result = pstmt.executeUpdate();
+			System.out.println(result + "줄 답변 등록이 db에 반영됨");
+		} catch (SQLException se) {
+			System.out.println(se.getMessage());
+			se.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	}
+	
+	ArrayList<Object[]> re_select(int num) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("select * from board " + 
+				"where BOARD_ORIGINAL = ? ");
+		ArrayList<Object[]> arrlist = new ArrayList<Object[]>();
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement(sql.toString());
+			pstmt.setInt(1, num);
+			ResultSet rs = pstmt.executeQuery();		
+			while (rs.next()) {
+				int num2 = rs.getInt("BOARD_NUM");
+				String name = rs.getString("BOARD_NAME");
+				String pass = rs.getString("BOARD_PASS");
+				String subject = rs.getString("BOARD_SUBJECT");
+				String content = rs.getString("BOARD_CONTENT");
+				String file = rs.getString("BOARD_FILE");
+				String original = rs.getString("BOARD_ORIGINAL");
+				int re_ref = rs.getInt("BOARD_RE_REF");
+				int re_lev = rs.getInt("BOARD_RE_LEV");
+				int re_seq = rs.getInt("BOARD_RE_SEQ");
+				int readcount = rs.getInt("BOARD_READCOUNT");
+				Date date = rs.getDate("BOARD_DATE");
+				Object[] obj = {num2, name, pass, subject, content, file, original, re_ref, re_lev, re_seq, readcount, date};
+				arrlist.add(obj);
+			}
+		} catch (SQLException se) {
+			System.out.println(se.getMessage());
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+			try {
+				if (conn != null)
+					conn.close();
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return arrlist;
+	}
+}

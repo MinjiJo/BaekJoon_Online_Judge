@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>String 객체의 메소드 활용</title>
+</head>
+<body>
+<script>
+	var jumin = prompt("주민번호를 입력하세요", "810908-1234567");
+	var one = jumin.substring(7, 8);
+	if(one == 1 || one == 3){
+		document.write("남자")
+		document.body.style.background = "pink";
+	}else if(one == 2 || one == 4){
+		document.write("여자")
+		document.body.style.background = "lime";
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%
+	request.setCharacterEncoding("euc-kr");
+	String name=request.getParameter("name");
+	String subject=request.getParameter("subject");
+	String filename1=request.getParameter("filename1");
+	String filename2=request.getParameter("filename2");
+	String origfilename1=request.getParameter("origfilename1");
+	String origfilename2=request.getParameter("origfilename2");
+%>
+<html>
+<head>
+<title>파일 업로드 확인 및 다운로드</title>
+<style>
+	table{margin:0 auto; width: 400px;}
+	input{width: 95%}
+</style>
+</head>
+<body>
+<form action="fileUpload.jsp" method="post"
+	  enctype="multipart/form-data">
+	<table border=1 class="table-bordered table-striped table-hover">
+		<tr class="yellow">
+			<td colspan=2 class="center pad"><h3>파일 업로드 폼</h3>
+		</tr>
+		<tr>
+			<td>올린 사람</td><td><input type="text" name="name"></td>
+		</tr>
+		<tr>
+			<td>제목</td><td><input type="text" name="subject"></td>
+		</tr>
+		<tr>
+			<td>파일명1</td>
+			<td><input type="file" name="fileName1">
+			<!-- 파일을 선택하여 전송할 수 있도록 type속성을 file로 설정합니다. -->
+			</td>
+		</tr>
+		<tr>
+			<td>파일명2</td>
+			<td><input type="file" name="fileName2"></td>
+		</tr>
+		<tr>
+			<td colspan=2 class="center green">
+			<input type="submit" value="전송"></td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

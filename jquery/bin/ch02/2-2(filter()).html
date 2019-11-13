@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<!-- 기본 필터 메서드
+		filter() : 문서 객체를 필터링합니다.
+		형식1) $(selector).filter(selector);
+		형식2) $(selector).filter(function(){});
+-->
+<script>
+	$(document).ready(function(){
+		$('h3').filter(':even')//$('h3:even')와 같은 의미
+			   .css({
+				   backgroundColor: 'black',
+				   color: 'white'
+			   });
+	});		
+</script>
+</head>
+<body>
+	<h3>Header-0</h3>
+	<h3>Header-1</h3>
+	<h3>Header-2</h3>
+	<h3>Header-3</h3>
+	<h3>Header-4</h3>
+	<h3>Header-5</h3>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 변수의 특성 : NaN와 Number() 함수</title>
+<script>
+	var number=100;
+	alert(number);
+	
+	//복소수로 표현할 수 없다.
+	var number = Math.sqrt(-3);
+	alert("number : " + number);	//에러 메시지 NaN(Not a Number) 출력
+	
+	//Number('A')-다른 자료형을 숫자로 바꿀 때 사용하는 함수로
+	//숫자로 구성된 문자가 아닌 경우 NaN 출력
+	var s='A';
+	alert("Number(" + s + ") : " + Number(s));	//NaN(Not a Number) 출력
+	
+	var digit = '100';
+	alert(Number(digit) + ", typeof Number(digit) :"
+						   + typeof Number(digit));
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	display: inline-block;
+	padding: 5px;
+	color: white;
+	background: olivedrab;
+}
+
+div#translate{
+	/* 태그를 y축으로 100px 만큼 이동 */
+	transform: translateY(100px);
+}
+
+div#translate:hover {
+	/* 태그를 x축 50px, y축으로 200px 만큼 이동 */
+	transform: translate(50px, 200px);
+	transition:1s;
+}
+</style>
+</head>
+<body>
+	<h3>다양한 Transform</h3>
+	아래는 이동(translate)이 적용된 사례이다.
+	또한 마우스를 올리면 추가적 변환이 일어난다.
+	<hr>
+	<br><br><br>
+	<div id="translate">translateY(100px)->translate(50px, 200px)</div>
+</body>
+</html>

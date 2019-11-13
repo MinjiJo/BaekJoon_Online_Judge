@@ -1,0 +1,5 @@
+@charset "EUC-KR";
+
+form{
+	margin: 0 auto;
+}

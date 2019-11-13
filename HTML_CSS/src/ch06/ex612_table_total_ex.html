@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 Selector Basic</title>
+<style>
+#books caption {
+	font-size: 14pt;
+	font-weight: bold;
+	margin: 0.5em
+}
+
+#books {
+	width: 90%;
+	caption-side: bottom;
+	margin: 0 auto;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+tr {
+	height: 50px;
+}
+
+thead {
+	background: gray;
+	color: yellow
+}
+
+td, th, #books {
+	border: 1px solid black;
+}
+
+tbody tr:nth-child(2n) { /*tbody 요소내의 짝수 <tr>의 배경색 지정*/
+	background: aliceblue;
+}
+
+tbody tr:nth-child(2n+1) { /*tbody 요소내의 홀수 <tr>의 배경색 지정*/
+	background: lightgreen;
+}
+
+/*
+ tbody tr td:last-child::after{content:"원"}
+ tfoot tr td:last-child::after{content:"원"}
+*/
+/*  부정 선택자
+	예) 선택자:not(선택자)
+*/
+table:not(thead) tr td:last-child::after{ content:"원"}
+
+tbody tr:hover, tfoot tr:hover{ background:pink;}
+thead tr:hover{ background: purple;}
+tfoot tr { background:aliceblue;}
+
+</style>
+</head>
+<body>
+	<table id="books">
+		<caption>추천 도서 테이블</caption>
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>제목</th>
+				<th>가격</th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+				<td colspan=2>총액</td>
+				<td>60000</td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr>
+				<td>윌터아이작슨</td>
+				<td>스티브잡스</td>
+				<td>15000</td>
+			</tr>
+			<tr>
+				<td>흥부와 놀부</td>
+				<td>선과 악</td>
+				<td>20000</td>
+			</tr>
+			<tr>
+				<td>괴테</td>
+				<td>파우스트</td>
+				<td>25000</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

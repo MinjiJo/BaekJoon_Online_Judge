@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			/* li {list-style-type:none} */
+			ol > li {list-style-type:upper-alpha;}
+			li.usa {list-style-type:disc;} /* ● 속이 찬 둥근 기호 */
+			li.kor {list-style-type:circle;} /* ○ 속이 빈 둥근 기호 */
+			li.renew {list-style-type:square;} /* ■ 속이 찬 네모 기호 */
+		</style>
+	</head>
+	<body>
+		<h3>과목별 추천도서 목록</h3>
+		<ol>
+			<li>흥부와 놀부</li>
+			<ul>
+				<li class="kor">제비</li>
+				<li class="usa">흥부</li>
+				<li class="usa">부자</li>
+			</ul>
+			<li>파우스트</li>
+			<ul>
+				<li class="kor">요한 볼프강 괴테</li>
+				<li class="kor">'멈춰라 너 정말 아릅다구나!'</li>
+				<li class="renew">불완전한 존재</li>
+			</ul>
+		</ol>	
+	</body>
+</html>

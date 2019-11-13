@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서 객체 만들기(1)</title>
+<!-- 문서 객체 만들기(2)
+	  속성 지정하는 방법 예 - 웹 브라우저가 지원하는 태그의 속성 지정하는 방법
+	 -->
+<script>
+	window.onclick = function(){ //window를 click한 경우 나타납니다.
+		//변수를 선언합니다.
+		var output = '';
+		output += '<img src = "Strawberry.jpg"'
+			+ ' width = "300px" height = "300px">';
+		document.body.innerHTML = output;
+	}
+</script>
+</head>
+<body>
+	
+</body>
+</html>

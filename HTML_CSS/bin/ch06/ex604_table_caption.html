@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>표의 캡션 위치</title>
+		<style>
+			#books caption {
+				font-size: 14pt;
+				font-weight: bold;
+				margin: 0.5em
+			}
+			#books {empty-cells: hide; caption-side: bottom;
+					width:500px; margin:0 auto; text-align:center}
+					
+			/* empty-cells : hide (빈 셀의 테두리를 그리지 않는다.)
+			   empty-cells : show (기본값 - 빈 셀의 테두리를 그린다.)
+			   caption-side : bottom (표의 제목 위치로 표 아래에 표시되도록 한다.) */
+			   
+			td, th, #books { border: 1px solid #58ACFA; }
+		</style>
+	</head>
+	<body>
+		<!-- border 속성을 사용하는 경우 -->
+		<table id="books">
+			<caption>추천 도서 테이블</caption>
+			<tr>
+				<th>작가</th>
+				<th>책제목</th>
+				<th>출판사</th>
+			</tr>
+			<tr>
+				<td>윌터아이작슨</td>
+				<td>스티브잡스</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>흥부와 놀부</td>
+				<td>선과 악</td>
+				<td>좋은출판사</td>
+			</tr>
+			<tr>
+				<td>괴테</td>
+				<td>파우스트</td>
+				<td>교학사</td>
+			</tr>
+		</table>
+		
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 내장 객체</title>
+</head>
+<body>
+<script>
+	//지정된 날짜로 초기화된 Date객체를 생성합니다.
+	//var today = new Date(2017, 2, 23);
+	var answer = prompt("날짜를 입력하세요.", "2019-10-19");
+	
+	var input = new Date(answer);
+	var y4 = input.getFullYear();
+	var m = input.getMonth() + 1;
+	var d = input.getDate();
+	var yoil = input.getDay();
+	var output = "오늘 날짜: " + y4 + "년 " + m + "월 " + d + "일 ";
+	var pstyle;
+
+	switch(yoil){
+	case 0:
+		pstyle = '<span style="color:red">'
+		output += pstyle + ' 일요일</span>';
+		break;
+	case 1:
+		output += " 월요일";
+		break;
+	case 2:
+		output += " 화요일";
+		break;
+	case 3:
+		output += " 수요일";
+		break;
+	case 4:
+		output += " 목요일";
+		break;
+	case 5:
+		output += " 금요일";
+		break;
+	case 6:
+		pstyle = '<span style="color:blue">'
+		output += pstyle + ' 토요일</span>';
+		break;
+	}
+	
+	document.write(output + "<br>");
+	
+	document.write("현재 시간: " + input.getHours() + "시 "
+					+ input.getMinutes() + "분 "
+					+ input.getSeconds() + "초");
+</script>
+</body>
+</html>

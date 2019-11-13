@@ -1,0 +1,49 @@
+package _5.dispatcher;
+
+public class DispatcherServlet {
+
+	public Board selectAll() {
+			PreparedStatement pstmt = null;
+			Connection conn = null;
+	
+			StringBuilder sql = new StringBuilder();
+			sql.append("select * from board order by num");
+			Board b = new Board();
+			try {
+				conn = ConnUtil.getConnection();
+				pstmt = conn.prepareStatement(sql.toString());
+				ResultSet rs = pstmt.executeQuery();
+				while (rs.next()) {
+					b.setNum(rs.getInt("num"));
+					b.setName(rs.getString("name"));
+					b.setPass(rs.getString("pass"));
+					b.setSubject(rs.getString("subject"));
+					b.setContent(rs.getString("content"));
+					b.setFile(rs.getString("file"));
+					b.setOriginal(rs.getString("original"));
+					b.setRe_ref(rs.getInt("re_ref"));
+					b.setRe_lev(rs.getInt("re_lev"));
+					b.setRe_seq(rs.getInt("re_seq"));
+					b.setReadcount(rs.getInt("readcount"));
+					b.setDate(rs.getDate("date"));
+				}
+			} catch (SQLException se) {
+				System.out.println(se.getMessage());
+			} finally {
+				try {
+					if (pstmt != null)
+						pstmt.close();
+				} catch (SQLException e) {
+					System.out.println(e.getMessage());
+				}
+				try {
+					if (conn != null)
+						conn.close();
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+			}
+			return b;
+		}
+
+}

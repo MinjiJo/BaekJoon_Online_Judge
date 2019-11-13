@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;homework_191018.TextList&apos; to &apos;CRUD&apos;&#x0D;&#x0A;- Original project: &apos;Java&apos;&#x0D;&#x0A;- Original element: &apos;homework_191018.TextList&apos;&#x0D;&#x0A;- Renamed element: &apos;homework_191018.CRUD&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TextList&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;homework_191018{TextList.java[TextList" matchStrategy="1" name="CRUD" qualified="false" references="true" similarDeclarations="false" stamp="1573104527531" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버튼의 색상으로 변경</title>
+<style>
+button{width: 70px; height: 25px; margin: 10px 0}
+img{width: 100px; position: absolute; visibility: visible; top: 45px;}
+#img1{left: 50px;}
+#img2{left: 175px;}
+#img3{left: 300px;}
+#outerBox{background: blue; width: 550px; height: 300px;}
+#innerBox{background: yellow; width: 450px; height: 200px; position: absolute; left: 55px; top: 55px;}
+span{display: inline-block; width:80px; background: #ccc; color: black;}
+
+</style>
+</head>
+<body>
+<div id="outerBox">
+	<div id="innerBox">
+		<img id="img1" src="image/slack.png">
+		<img id="img2" src="image/itunes.png">
+		<img id="img3" src="image/call.png">
+	</div>
+</div>
+<span>Outer Box</span>
+<button>Red</button>
+<button>Green</button>
+<button>Blue</button>
+<button>Gray</button>
+<button>White</button>
+<br>
+<span>Inner Box</span>
+<button>Red</button>
+<button>Green</button>
+<button>Blue</button>
+<button>Gray</button>
+<button>White</button>
+<script>
+//var btn = document.getElementsByTagName('button');
+var btn = document.querySelectorAll('button');
+for(var i = 0; i < btn.length; i++){
+	if(i>=5){
+		btn[i].addEventListener('click', function(){
+			var box=document.getElementById('innerBox');
+			box.style.backgroundColor = this.innerHTML;
+			});
+	}
+	else{
+		btn[i].addEventListener('click', function(){
+			var box=document.getElementById('outerBox');
+			box.style.backgroundColor = this.innerHTML;
+			});
+	}		
+}
+</script>
+</body>
+</html>

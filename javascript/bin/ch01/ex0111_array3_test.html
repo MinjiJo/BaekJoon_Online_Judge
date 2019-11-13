@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열로 리스트</title>
+</head>
+<body>
+	<script>
+		var itemlist = ['국수', '계란', '고추장', '김치', '오이'];
+		var list = "<h1>비빔국수 재료</h1><hr>"
+		list += "<ul type = 'disc'>"
+		
+		for(var i = 0; i < itemlist.length; i++){
+			list += "<li";
+			if(itemlist[i] == '국수'){
+				list+=' style="color:green;font-weight:bold;font-style:italic">';	
+			}else if(itemlist[i] == '고추장'){
+				list+=' style="color:red;">';
+			}else if(itemlist[i] == '오이'){
+				list+=' style="color:green;">';
+			}else{
+				list+='>';
+			}
+			list += itemlist[i]+"</li>";
+		}
+		list += "</ul>"
+		
+		document.write(list)
+</script>
+</body>
+</html>

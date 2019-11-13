@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+	$(document).ready(function(){
+		//img태그의 속성 'width'의 값을 200px으로 설정합니다.
+		$('img').attr('width', 
+					   function(index){//index=0일때 width=100px
+							return (index + 1) * 100;	//index=1일때 width=200px;
+														//index=2일때 width=300px;
+						});
+	})
+</script>
+</head>
+<body>
+	<img src = "./image/slack.png">
+	<img src = "./image/itunes.png">
+	<img src = "./image/viber.png">
+</body>
+</html>

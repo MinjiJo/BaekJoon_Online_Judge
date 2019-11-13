@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	table{width: 500px; height: 200px; margin: 10px auto; 
+			text-align: center; border-collapse: collapse;}
+	caption{color: green; font-size: 50px;}
+	tr, th, td{ border: 1px solid black;}
+	tr:first-child{background-color: pink;}
+</style>
+</head>
+<body>
+<script>
+	//객체 생성 방법
+	//1. new 연산자 이용하기
+	//var saram = new Object();//사용자 정의 객체 생성
+	
+	//2. 객체 리터럴(클론으로 구별되는 property와 값의 쌍으로 쉼표로 분리된 목록) 이용
+	var saram = {
+		'name'	: "나최고",
+		'age'	: 25	,
+		ki		: 170.2	,
+		blood	: 'A'	,
+		address	: '서울시 강남구',
+		print	: function(){
+					document.write("<table>");
+					document.write("<caption>신상 정보</caption>");
+					document.write("<tr>");
+					document.write("<th>항목 (속성: property)</th>");
+					document.write("<th>내용 (값: value)</th>")
+					document.write("</tr>");
+					
+					for(var p in this){
+						if(p != "print"){
+							document.write("<tr>");
+							document.write("<td> saram." + p + "</td>");
+							document.write("<td>" + this[p]);
+							if(p == "age")
+								document.write("세");
+							else if(p == "ki")
+								document.write("cm");
+							else if(p == "blood")
+								document.write("형");
+													
+							document.write("</td></tr>")
+						}//if
+					}//for
+					document.write("</table>");
+				}
+	};
+	saram.print();
+</script>
+</body>
+</html>

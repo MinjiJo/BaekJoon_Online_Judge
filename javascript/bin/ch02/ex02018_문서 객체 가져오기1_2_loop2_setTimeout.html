@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INDEX</title>
+<script>
+	window.onload = function(){
+		var changeflower = document.getElementById('flower');
+		
+		var flowerlist = ['flower.jpg','koala.jpg','steve.jpg','Strawberry.jpg','Desert.jpg'];
+		
+		var count = 0;
+		
+		
+		function change(){
+			/*
+			var path = 'image/' + flowerlist[count%flowerlist.length]
+			count++;
+			*/
+			var path = 'image/'
+				+ flowerlist[count++%flowerlist.length];
+			changeflower.src = path;
+		}
+		start = setInterval(change,1000);
+		
+		var stopButton = document.getElementById('stopButton');
+		stopButton.style.width = '100px';
+		stopButton.style.height = '30px';
+		stopButton.style.backgroundColor = 'green';
+		stopButton.style.color = 'white';
+		stopButton.style.border = '0px';
+		stopButton.onclick = function(){
+			clearInterval(start);
+		};
+	};
+</script>
+</head>
+<body>
+	1초마다 이미지가 바뀝니다.<br>
+	<img src="image/flower.jpg"
+		 id="flower" width="500px" height="500px">
+	<br><input type="button" id="stopButton" value = "stop">
+</body>
+</html>

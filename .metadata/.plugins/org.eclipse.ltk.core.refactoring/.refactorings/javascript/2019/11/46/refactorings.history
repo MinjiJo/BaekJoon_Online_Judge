@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;semantic&apos;&#x0D;&#x0A;- Original project: &apos;javascript&apos;&#x0D;&#x0A;- Destination element: &apos;semantic&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     test_회원가입폼.css&#x0D;&#x0A;     test_회원가입폼2.html&#x0D;&#x0A;     test_회원가입폼2.js" description="Copy files" element1="src/ch02/test_회원가입폼.css" element2="src/ch02/test_회원가입폼2.html" element3="src/ch02/test_회원가입폼2.js" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1573528239988" target="/JspProject/WebContent/ch6_layout/semantic" units="0" version="1.0"/>
+</session>

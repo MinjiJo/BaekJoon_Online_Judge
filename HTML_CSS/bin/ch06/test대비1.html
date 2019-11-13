@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>문서구조화</title>
+<style>
+	*{margin: 0; padding: 0; box-sizing: border-box;}
+	header{width:100%; height: 60px;
+			text-align: center; line-height: 60px; 
+			background-color: yellow; }
+	nav{width: 100%; height: 60px; 
+		line-height: 60px;
+		background-color: #80C8E8;}
+	nav>ul>li{float: right; list-style-type: none;
+			  margin: auto 20px;}
+	a{text-decoration: none; color: black;}
+	article{width: 70%; height: 400px; 
+			background-color: orange; padding: 10px;
+			float: left;}
+	p{margin: 15px 0;}
+	aside{ width: 30%; height: 400px; 
+			background-color: #00F800; padding: 10px 10px 10px 30px;
+			float: right;}
+	footer{ width: 100%; height: 60px; background-color: turquoise; 
+			text-align: center; line-height: 60px;
+			float: left;}
+</style>
+</head>
+<body>
+	<header>웹</header>
+	<nav>
+		<ul>
+			<li><a href="#">javascript</a></li>
+			<li><a href="#">css3</a></li>
+			<li><a href="#">html5</a></li>
+		</ul>
+	</nav>
+	<article>
+		<h1>html5 문서 기본</h1>
+		<p>기본 문서 만들기</p>
+		<p>문서 꾸미기</p>
+		<p>목록 나열하기</p>
+		<p>표 그리기</p>
+		<p>문서 특정부분 구분하기</p>
+	</article><aside>
+		<ul>
+			<li>W3C</li>
+			<li>ECMA</li>
+			<li>IETF</li>
+		</ul>
+	</aside>
+	<footer>작성자: 히든 싱어 팀</footer>
+</body>
+</html>

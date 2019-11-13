@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SCALE</title>
+<style>
+div {
+	display: inline-block;
+	padding: 5px;
+	color: white;
+	background: olivedrab;
+	position: absolute;
+	left: 500px;
+}
+
+/* 변환 */
+div#scale {
+	/* 태그의 폭과 높이를 각각 배 만큼 확대 : 가로 1배, 세로로 1배 만큼 확대 */
+	transform: scale(1, 1);
+}
+
+/* 마우스 올릴 때 추가 변환 */
+div#scale:hover {
+	transform: scale(4, 2);
+	transition: 1s;
+}
+</style>
+</head>
+<body>
+	<h3>다양한 Transform</h3>
+	아래는 확대/축소(scale)가 적용된 사례이다.
+	또한 마우스를 올리면 추가적 변환이 일어난다.
+	<hr>
+	<div id="scale">scale(1,1)->scale(4,2)</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+	$(document).ready(function(){
+		setTimeout(function(){
+			var imagepath = $('input:checked').val();
+			alert("선택한 그림의 위치는 '" + imagepath + "' 입니다.'");
+		}, 5000)
+	});
+</script>
+</head>
+<body>
+<h3>선택한 그림 위치 출력</h3>
+<hr>
+<div>radio 버튼을 클릭하세요</div>
+	<form>
+		<input type="radio" name="icon"
+			   value="./image/slack.png">slack<br>
+		<input type="radio" name="icon"
+			   value="./image/itunes.png">itunes<br>
+		<input type="radio" name="icon"
+			   value="./image/viber.png">viber<br>
+	</form>
+</body>
+</html>

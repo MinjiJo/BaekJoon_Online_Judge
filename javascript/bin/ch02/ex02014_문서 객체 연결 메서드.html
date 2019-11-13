@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onclick = function(){
+		var output = '';
+		output += '<ul>';
+		output += '		<li>JavaScript</li>';
+		output += '		<li>jQuery</li>';
+		output += '		<li>Ajax</li>';
+		output += '</ul>';
+		
+		//innerHTML 속성에 문자열을 할당합니다.
+		//innerHTML 속성은 태그의 내부를 의미한다.
+		document.body.innerHTML = output;
+	};
+/* window.onclick = function(){
+	var ul = document.createElement('ul');
+	var li1 = document.createElement('li');
+	var li2 = document.createElement('li');
+	var li3 = document.createElement('li');
+	var textNode1 = document.createTextNode('JavaScript');
+	var textNode2 = document.createTextNode('jQuery');
+	var textNode3 = document.createTextNode('Ajax');
+	
+	li1.appendChild(textNode1);
+	li2.appendChild(textNode2);
+	li3.appendChild(textNode3);
+	document.body.appendChild(ul);
+	ul.appendChild(li1);
+	ul.appendChild(li2);
+	ul.appendChild(li3);
+} */
+</script>
+</head>
+<body>
+</body>
+</html>

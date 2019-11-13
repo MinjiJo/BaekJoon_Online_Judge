@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//함수를 선언합니다.
+	function test(){
+		var i=0;
+		return function(){
+			return i++;
+		};
+	}
+	
+	var return_function = test();
+	document.write(return_function() + "<br>");
+	document.write(return_function() + "<br>");
+	document.write(return_function() + "<br>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

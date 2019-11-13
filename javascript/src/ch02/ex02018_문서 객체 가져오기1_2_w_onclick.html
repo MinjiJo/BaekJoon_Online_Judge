@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>INDEX</title>
+<!-- 문서 객체 가져오기(1)
+	getElementById(id) : 태그의 id와 일치하는 문서 객체를 가져옵니다. -->
+<script>
+	//window.onload = function() {
+	window.onload = function(){
+		//문서 객체를 가져옵니다.
+		var changeflower = document.getElementById('flower');
+		changeflower.onclick = function(){
+			changeflower.src = 'image/flower.jpg';
+		}
+	}
+</script>
+</head>
+<body>
+	윈도우를 클릭하면 꽃으로 바뀝니다.<br>
+	<img src="image/Strawberry.jpg"
+		 id="flower" width="500px" height="500px">
+</body>
+</html>

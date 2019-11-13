@@ -1,0 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<script>
+	alert("<%=session.getAttribute("id")%>´Ô ·Î±×¾Æ¿ô µÇ¼Ì½À´Ï´Ù.");
+</script>
+<%
+session.invalidate();
+%>
+<script>
+location.href="templatetest.jsp";
+</script>

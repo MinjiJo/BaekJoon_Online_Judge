@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+<% 
+String korea = request.getParameter("korea");
+String english = request.getParameter("english");
+%>
+
+<%
+Cookie cookie = new Cookie("korea", korea);
+Cookie cookie = new Cookie("english", english);
+
+cookie.setMaxAge(60*60*24);
+response.addCookie(cookie);
+%>
+</script>	
+</body>
+</html>

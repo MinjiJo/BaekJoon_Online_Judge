@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 내장 객체 - Date</title>
+</head>
+<body>
+<script>
+	//변수 선언
+	//컴퓨터에서 제공되는 날짜와 시간을 알아내거나 설정하기 위한 객체
+	//var today = new Date(2018,3,11,0,0,0,0);
+	var today = new Date();
+	today.setHours(0,0,0); //0시 0분 0초
+	today.setMilliseconds(0);
+	document.write("오늘 날짜 : " + today.toLocaleString() + "<br>");
+	document.write("현재 시간: " + today.getHours() + "시 "
+			+ today.getMinutes() + "분 " 
+			+ today.getSeconds() + "초 "
+			+ today.getMilliseconds() + "<br>");
+	var answer = prompt("비교할 날짜를 입력하세요.", "2019-04-05");
+	
+	//날짜 형식의 string을 이용해서 날짜를 설정한다.
+	var input = new Date(answer);
+	input.setHours(0,0,0);
+	input.setMilliseconds(0);
+	document.write("비교 날짜 : " + input.toLocaleString() + "<br>");
+	document.write("비교 시간 : " + input.getHours() + "시 "
+			+ input.getMinutes() + "분 " 
+			+ input.getSeconds() + "초 "
+			+ input.getMilliseconds() + "<br>");
+
+	//날짜 간격 구하기
+	var interval = (today.getTime() - input.getTime());
+
+	//1일 = 1000(밀리초)*60(초)*60(분)*24(시간)
+	interval = interval/(1000*60*60*24);
+	if(interval < 0){
+		message = "앞으로 " + Math.abs(interval) + "일 남았습니다.";
+	} else if(interval == 0){
+		message = "오늘입니다.";
+	} else{
+		message = interval + "일 전입니다.";
+	};
+	document.write(message + "<hr>");
+</script>
+</body>
+</html>

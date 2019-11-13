@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>키프레임 애니메이션</title>
+	<style>
+		@keyframes sway {
+			0% { top: 100px; left: 100px; background: red; }
+			25% { top: 150px; left: 100px; background: orange; }
+			50% { top: 200px; left: 100px; background: yellow; }
+			75% { top:150px; left: 100px; background: green; }
+			100% { top:100px; left: 100px; background: blue; }
+		}
+		#title {
+			  position: relative; left: 100px;
+			  animation-name: sway;		/*애니메이션 이름*/
+			  animation-duration: 3s;	/*애니메이션 1회 시간*/
+			  animation-iteration-count: infinite;}	/*애니메이션 반복 숫자 - 반복횟수*/
+		div{width:100px; height:100px; background: red;}
+	</style>
+</head>
+<body>
+	<div id="title"></div>
+</body>
+</html>

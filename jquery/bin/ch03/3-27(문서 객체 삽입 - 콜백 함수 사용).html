@@ -1,0 +1,43 @@
+﻿<!-- 3-27(문서 객체 삽입 - 콜백 함수 사용).html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <style>
+     h1{color:#63c163}
+     h2{color:#da6a55}
+    </style>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <!-- 문서 객체 삽입 -->
+    <!--  $(A).append(B) : B를 A의 뒷부분에 추가합니다. 
+         $(A).prepend(B) : B를 A의 앞부분에 추가합니다.
+         형식) $(selector).append(content, content, ...);
+          $(selector).append(function(index){}); -->
+    <script>
+        $(document).ready(function () {
+            // 변수를 선언합니다.
+            var content = [
+                { name: '홍길동', region: '서울특별시 강서구' },
+                { name: '임꺽정', region: '서울특별시 광진구' },
+                { name: '손오공', region: '미국 메사추세츠' }
+            ];
+
+            // 문서 객체를 추가합니다.
+            // 각각의 div태그에 다른 내용을 입력하기 위해 배열을 사용합니다.
+            $('div').append(function (index) {
+            	// 변수를 선언합니다.
+            	var item = content[index];
+            	var output = '';
+            	output += '<h1>' + item.name + '</h1>';
+            	output += '<h2>' + item.region + '</h2>';
+            	return output;
+            });
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>    
+</body>
+</html>

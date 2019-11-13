@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버튼의 색상으로 변경</title>
+<style>
+button{width: 70px; height: 25px; margin: 10px 0}
+img{width: 100px; position: absolute; visibility: visible; top: 45px;}
+#img1{left: 50px;}
+#img2{left: 175px;}
+#img3{left: 300px;}
+#outerBox{background: blue; width: 550px; height: 300px;}
+#innerBox{background: yellow; width: 450px; height: 200px; position: absolute; left: 55px; top: 55px;}
+span{display: inline-block; width:80px; background: #ccc; color: black;}
+</style>
+</head>
+<body>
+<div id="outerBox">
+	<div id="innerBox">
+		<img id="img1" src="image/slack.png">
+		<img id="img2" src="image/itunes.png">
+		<img id="img3" src="image/call.png">
+	</div>
+</div>
+<span>Outer Box</span>
+<button>Red</button>
+<button>Green</button>
+<button>Blue</button>
+<button>Gray</button>
+<button>White</button>
+<br>
+<span>Inner Box</span>
+<button>Red</button>
+<button>Green</button>
+<button>Blue</button>
+<button>Gray</button>
+<button>White</button>
+<script>
+function change(obj, divid){
+	var box = document.getElementById(divid);
+	box.style.backgroundColor = obj.innerHTML;
+}
+
+//var btn = document.getElementsByTagName('button');
+var btn = document.querySelectorAll('button');
+for(var i = 0; i < btn.length; i++){
+	if(i>=5)
+		btn[i].addEventListener('click', function(){change(this, 'innerBox')});
+	else
+		btn[i].addEventListener('click', function(){change(this, 'outerBox')});
+}
+
+/* var button = document.getElementsByTagName("button");
+var outer = document.getElementById("outerBox");
+var inner = document.getElementById("innerBox");
+
+function changeColor(e){
+	if(e.currentTarget == button[0]){
+		outer.style.backgroundColor="red";
+	}else if(e.currentTarget == button[1]){
+		outer.style.backgroundColor="green";
+	}else if(e.currentTarget == button[2]){
+		outer.style.backgroundColor="blue";
+	}else if(e.currentTarget == button[3]){
+		outer.style.backgroundColor="gray";
+	}else if(e.currentTarget == button[4]){
+		outer.style.backgroundColor="white";
+	}else if(e.currentTarget == button[5]){
+		inner.style.backgroundColor="red";
+	}else if(e.currentTarget == button[6]){
+		inner.style.backgroundColor="green";
+	}else if(e.currentTarget == button[7]){
+		inner.style.backgroundColor="blue";
+	}else if(e.currentTarget == button[8]){
+		inner.style.backgroundColor="gray";
+	}else if(e.currentTarget == button[9]){
+		inner.style.backgroundColor="white";
+	}
+}
+
+for(i = 0; i < button.length; i++){
+	button[i].addEventListener('click', changeColor);
+} */
+
+</script>
+</body>
+</html>

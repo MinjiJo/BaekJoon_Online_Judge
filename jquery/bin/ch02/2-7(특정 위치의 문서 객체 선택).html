@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<!-- 특정 위치의 문서 객체 선택
+eq() : 특정 위치에 존재하는 문서 객체를 선택합니다.
+first(): 첫 번째 위치하는 문서 객체를 선택합니다.
+last() : 마지막에 위치하는 문서 객체를 선택합니다. -->
+<script>
+	$(document).ready(function(){
+		$('h1').first().css('background','orange');
+		$('h1').last().css('background','red');
+		$('h1').eq(1).css('background','pink');
+
+	})
+</script>
+</head>
+<body>
+	<h1>Header-0</h1>
+	<h1>Header-1</h1>
+	<h1>Header-2</h1>
+	<h1>Header-3</h1>
+	<h1>Header-4</h1>
+	<h1>Header-5</h1>
+</body>
+</html>

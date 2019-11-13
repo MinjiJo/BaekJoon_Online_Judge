@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<!-- type속성이 checkbox -->
+<script>
+	$(document).ready(function() {
+		$('#all-check').change(function() {
+			//체크 상태를 확인합니다. is() 메소드 사용하면 ()안의 값이 있는지 없는지 true, false로 나옴
+			if($(this).is(':checked')){
+				$('input:checkbox').prop('checked', true);
+									//체크 상태를 바꿀 때 사용하는 메서드입니다.
+			} else {
+				$('input:checkbox').prop('checked', false);
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<input type="checkbox" id="all-check">
+	<label>All</label>
+	<div id="check-item">
+		<input type="checkbox">
+		<label>A Option</label>
+		<input type="checkbox">
+		<label>B Option</label>
+		<input type="checkbox">
+		<label>C Option</label>
+	</div>
+</body>
+</html>

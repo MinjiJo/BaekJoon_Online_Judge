@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<script>
+	$(document).ready(function() {
+		//submit() : submit 버튼을 누를 때 발생합니다.
+		$('#my-form').submit(function() {
+			//입력 양식의 value를 가져옵니다.
+			var name = $('#name').val();
+			if(name == ''){
+				alert('이름을 입력하세요');
+				$('#name').focus();
+				return false;
+			}
+			
+			var password = $('#password').val();
+			if(password == ''){
+				alert('비밀번호를 입력하세요');
+				$('#password').focus();
+				return false;
+			}
+			
+			//출력합니다.
+			alert(name + ' : ' + password);
+		})
+	})
+</script>
+</head>
+<body>
+	<form id="my-form"
+		  action="4-7(trigger()-이벤트 강제 발생).html"> <!-- method 안 쓰면 get방식이 default -->
+		<table>
+			<tr>
+				<td>이름: </td>
+				<td><input type="text" name="name" id="name"></td>
+			</tr>
+			<tr>
+				<td>비밀번호: </td>
+				<td><input type="password" name="password" id="password"></td>
+			</tr>
+		</table>
+		<input type="submit" value="제출">
+	</form>
+</body>
+</html>

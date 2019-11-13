@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	//객체 생성 방법
+	//1. new 연산자 이용하기
+	var saram = new Object();//사용자 정의 객체 생성
+	
+	//2. {} 이용하기
+	//var saram = {};
+	
+	//생성된 객체에 속성 추가하기
+	saram.name = "조민지";
+	saram.age = 29;
+	saram.ki = 164;
+	saram.blood = "AB";
+	saram.address = "경기도 양주시";
+	
+	//메서드 만들기
+	//객체.메서드명=function(){};
+	saram.print=function(){
+		for(var p in saram){
+			if(p != "print"){
+				document.write(p + '=' + saram[p] + "<br>");
+			}
+		}
+		document.write("<hr>");
+	};
+	
+	saram.print();
+</script>
+</body>
+</html>

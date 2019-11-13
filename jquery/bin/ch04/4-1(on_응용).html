@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../js/jquery-3.4.1.js"></script>
+<!-- jQuery로 이벤트를 연결하는 가장 기본적인 방법은 on() 메서드를 사용하는 것입니다.
+	 on() 메서드의 두 가지 형태
+	 1. $(selector).on(eventName, function(event){})
+	 2. $(selector).on(object) -->
+<script>
+	$(document).ready(function(){
+	/*
+	- 이벤트를 연결합다.
+	  on() 메서드의 첫 번째 매개변수는 이벤트 이름이고(click)
+	두 번째 매개변수에 이벤트 리스너를 입력합니다.
+	   여기서 사용시 this는 이벤트가 발생한 객체를 의미합니다.
+	   h1 태그를 click 이벤트에 연결하고 이벤트 발생 시 이벤트 발생 객체에
+	   '+' 글자를 추가합니다.
+	*/
+		var moyang = ['★', '※', '♣']
+		$('h1').on('click', function() {
+			$(this).html(function (index, html){
+				return html + moyang[$(this).index()];;
+			})
+		});
+	})
+</script>
+</head>
+<body>
+	<h1>Header(0)</h1>
+	<h1>Header(1)</h1>
+	<h1>Header(2)</h1>
+</body>
+</html>

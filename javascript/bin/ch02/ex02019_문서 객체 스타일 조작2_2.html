@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM Basic</title>
+<style>
+	#after{
+			border : 2px solid black;
+			color : orange;
+			font-family : helvetica;
+			background-color : red;
+	}
+</style>
+</head>
+<body>
+	<h1 class="header">Header</h1>
+<script>
+	var h = document.getElementsByClassName('header');
+	function change(){
+		//속성 설정합니다. id="after"
+		h[0].setAttribute("id","after");
+	}
+	h[0].onclick = change;
+</script>
+</body>
+</html>

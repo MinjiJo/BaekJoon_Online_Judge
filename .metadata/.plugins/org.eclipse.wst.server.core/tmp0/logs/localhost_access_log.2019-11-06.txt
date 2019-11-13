@@ -1,0 +1,5 @@
+127.0.0.1 - - [06/Nov/2019:19:44:26 +0900] "GET / HTTP/1.1" 404 1115
+0:0:0:0:0:0:0:1 - - [06/Nov/2019:19:44:45 +0900] "GET /JspProject/Hello.jsp HTTP/1.1" 200 141
+127.0.0.1 - - [06/Nov/2019:19:50:23 +0900] "GET / HTTP/1.1" 404 1115
+0:0:0:0:0:0:0:1 - - [06/Nov/2019:19:50:25 +0900] "GET /JspProject/ch3/_1.login/login1_get.jsp HTTP/1.1" 200 551
+0:0:0:0:0:0:0:1 - - [06/Nov/2019:19:50:28 +0900] "GET /JspProject/ch3/_1.login/LifeCycleTest?id=asdf&passwd=asdf HTTP/1.1" 200 94

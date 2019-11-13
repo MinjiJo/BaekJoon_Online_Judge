@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Request Test3</title>
+<link rel="stylesheet"
+ 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<h1>쿠키, URL/URI, 요청방식에 관련된 정보 예제</h1>
+	<table class="table table-striped">
+		<tr>
+			
+		</tr>
+	</table>
+</div>
+</body>
+</html>

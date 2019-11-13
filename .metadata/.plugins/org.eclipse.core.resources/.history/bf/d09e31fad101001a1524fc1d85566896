@@ -1,0 +1,41 @@
+package _8.session;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+@WebServlet("/ch3/_8.session/login_ok")
+public class login_ok extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    public login_ok() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		
+		String id = request.getParameter("id");
+		String passwd = request.getParameter("passwd");
+		session.setAttribute("id", id);
+		request.setAttribute("passwd", passwd);
+		
+		if(id.equals("java") && passwd.equals("java")) {
+			response.sendRedirect("loginSuccess.jsp");
+		} else if(id != "java") {
+			out.print("<script>alert('아이디가 일치하지 않습니다.'");
+			out.print("history.back();</script>");
+		} else if(passwd != "java") {
+			alert("비밀번호가 일치하지 않습니다.");
+			history.back();
+		}
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+}

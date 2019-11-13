@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>login2</title>
+<style>
+@keyframes sway {
+	from { transform: scale(0,0); }
+	to { transform: scale(1,1); }
+}
+* { margin: 0; box-sizing: border-box; }
+fieldset { width: 70%;  margin: 5px auto; animation: sway 1s 1 }
+input[type=text], input[type=password] { width: 100%; height: 40px; padding: 10px; }
+input[type=submit], input[type=reset] { width: 50%; height: 50px; color: white; border: none; }
+input[type=submit] { background-color: green; }
+input[type=reset] { background-color: red; }
+input[type=submit]:hover, input[type=reset]:hover { cursor: pointer; }
+</style>
+</head>
+<body>	
+	<form method="get" action="#">
+		<fieldset>
+			<h3>Username</h3>
+			<input type="text" name="name" placeholder="Enter Username" required>
+			<h3>Password</h3>
+			<input type="password" name="pw" placeholder="Enter Password" required>
+			<input type="checkbox" name="checkbox" checked> Remember me<br>
+			<input type="submit" name="submit" value="Login"><input type="reset" name="reset" value="Cancel">
+		</fieldset>
+	</form>
+</body>
+</html>

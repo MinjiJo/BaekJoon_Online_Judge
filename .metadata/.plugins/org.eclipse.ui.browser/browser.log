@@ -1,0 +1,70 @@
+
+11월 06, 2019 19:44:46.53 NEW SESSION
+11월 06, 2019 19:44:46.53 
+11월 06, 2019 19:44:46.53 KLIB_SelfTest return : KLR_OK
+
+11월 08, 2019 15:45:05.87 NEW SESSION
+11월 08, 2019 15:45:05.87 [5384:2400:1108/154505.866:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 08, 2019 16:10:44.36 
+11월 08, 2019 16:10:44.37 KLIB_SelfTest return : KLR_OK
+11월 08, 2019 17:24:55.35 [11204:5264:1108/172455.352:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 08, 2019 17:44:37.89 
+11월 08, 2019 17:44:37.89 KLIB_SelfTest return : KLR_OK
+
+11월 10, 2019 19:14:34.99 NEW SESSION
+11월 10, 2019 19:14:34.99 [11160:16344:1110/191434.986:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 10, 2019 20:35:04.33 
+11월 10, 2019 20:35:04.33 KLIB_SelfTest return : KLR_OK
+
+11월 11, 2019 09:36:50.31 NEW SESSION
+11월 11, 2019 09:36:50.31 [13420:13704:1111/093650.314:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 11, 2019 18:48:33.03 
+11월 11, 2019 18:48:33.04 KLIB_SelfTest return : KLR_OK
+
+11월 12, 2019 14:37:43.85 NEW SESSION
+11월 12, 2019 14:37:43.85 [9536:6048:1112/143743.838:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 12, 2019 17:04:58.13 
+11월 12, 2019 17:04:58.13 KLIB_SelfTest return : KLR_OK
+11월 12, 2019 17:05:24.67 [7124:6764:1112/170524.671:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 12, 2019 17:12:36.90 
+11월 12, 2019 17:12:36.90 KLIB_SelfTest return : KLR_OK
+11월 12, 2019 17:13:25.20 [6944:2656:1112/171325.206:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 12, 2019 17:14:44.07 
+11월 12, 2019 17:14:44.07 KLIB_SelfTest return : KLR_OK
+11월 12, 2019 17:14:59.38 [15872:12392:1112/171459.389:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 12, 2019 17:16:15.25 
+11월 12, 2019 17:16:15.25 KLIB_SelfTest return : KLR_OK
+11월 12, 2019 17:18:45.86 [7024:11764:1112/171845.866:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 12, 2019 17:21:00.92 
+11월 12, 2019 17:21:00.92 KLIB_SelfTest return : KLR_OK
+11월 12, 2019 17:21:07.22 [11836:17108:1112/172107.229:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 12, 2019 17:26:19.40 
+11월 12, 2019 17:26:19.40 KLIB_SelfTest return : KLR_OK
+11월 12, 2019 17:26:47.66 [11948:8648:1112/172647.667:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 12, 2019 17:26:54.56 
+11월 12, 2019 17:26:54.56 KLIB_SelfTest return : KLR_OK
+11월 12, 2019 17:27:49.76 [10392:2804:1112/172749.763:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 12, 2019 17:35:54.52 
+11월 12, 2019 17:35:54.52 KLIB_SelfTest return : KLR_OK
+
+11월 13, 2019 09:16:54.64 NEW SESSION
+11월 13, 2019 09:16:54.64 [11964:13348:1113/091654.643:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 13, 2019 09:53:33.00 
+11월 13, 2019 09:53:33.00 KLIB_SelfTest return : KLR_OK
+11월 13, 2019 10:07:31.67 [10844:4004:1113/100731.678:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 13, 2019 10:37:05.04 
+11월 13, 2019 10:37:05.04 KLIB_SelfTest return : KLR_OK
+11월 13, 2019 10:37:21.62 [7468:18172:1113/103721.622:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 13, 2019 10:46:41.91 
+11월 13, 2019 10:46:41.91 KLIB_SelfTest return : KLR_OK
+11월 13, 2019 10:50:40.45 [7852:19080:1113/105040.450:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 13, 2019 11:41:34.60 
+11월 13, 2019 11:41:34.61 KLIB_SelfTest return : KLR_OK
+11월 13, 2019 11:44:05.86 [9488:19196:1113/114405.866:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+11월 13, 2019 11:44:42.31 
+11월 13, 2019 11:44:42.31 KLIB_SelfTest return : KLR_OK
+11월 13, 2019 11:45:50.96 
+11월 13, 2019 11:45:50.97 KLIB_SelfTest return : KLR_OK
+
+11월 13, 2019 11:53:11.68 NEW SESSION
+11월 13, 2019 11:53:11.68 [1168:17200:1113/115311.684:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.

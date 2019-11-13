@@ -1,0 +1,30 @@
+package sort;
+
+public class StraightSelectionSort {
+	public static void main(String[] args) {
+		int[] arr = new int[5000];
+		
+		for(int i  = 0 ; i < arr.length; i++) {
+			arr[i] = (int)(Math.random() * 100) + 1;
+		}
+		
+		selectionSort(arr, 5000);
+		
+		for(int i  = 0 ; i < arr.length; i++) {
+			System.out.println("arr[" + i + "]=" + arr[i]);
+		}
+	}
+	
+	
+	static void selectionSort(int[] a, int n) {		
+		for(int i = 0; i < n - 1; i++) {
+			int min = i;		//아직 정렬되지 않은 부분에서 가장 작은 요소의 인덱스를 기록합니다.
+			for (int j = i + 1; j < n; j++)
+				if(a[j] < a[min])
+					min = j;
+			int imsi = a[i]; //아직 정렬되지 않은 부분의 첫 요소와 가장 작은 요소를 교환합니다.
+			a[i] = a[min];
+			a[min] = imsi;
+		}
+	}
+}

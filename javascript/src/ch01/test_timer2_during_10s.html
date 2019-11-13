@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>타이머 10초 뒤 작동 멈춤</title>
+<script>
+/* 내 코드
+function current(){
+	var today = new Date();
+	document.body.innerHTML = today.toLocaleString();
+	}
+
+var con = setInterval(current, 1000);
+
+function stop() {
+	clearTimeout(con);
+}
+
+setTimeout(stop, 10000); */
+
+var intervalID = 
+	setInterval(function(){
+		document.open();
+		document.write(new Date().toLocaleString());
+		document.close();
+	},
+	1000);
+
+//10초 후 함수를 실행합니다.
+setTimeout(function(){
+	//타이머를 종료합니다.
+	clearInterval(intervalID);
+}, 10000);
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS3 Property Basic - 일반 구조 선택자</title>
+<style>
+	li{
+		list-style: none; /* 목록 마커의 종류를 지정해 주는 속성으로
+							 마커를 사용하지 않음 */
+		float: left; /*위치 왼쪽*/
+		padding: 20px 20px;
+		width: 60px;
+		text-align:center;
+	}
+	li:first-child {
+		border-radius: 10px 0 0 10px;
+						/*테두리를 둥글게 하는 속성*/
+	}
+	li:last-child {
+		border-radius: 0 10px 10px 0;
+	}
+	li:nth-child(2n) { 
+		background-color: red;
+	}
+	li:nth-child(2n+1) { 
+		background-color: brown;
+	}
+	p {
+		clear:left; margin-left: 50px;
+	}
+</style>
+</head>
+<body>
+	<ul>
+		<li>First</li>
+		<li>Second</li>
+		<li>Third</li>
+		<li>Fourth</li>
+		<li>Fifth</li>
+		<li>Sixth</li>
+		<li>Seventh</li>
+	</ul>
+	<p>나는 꿈틀이입니다.</p>
+</body>
+</html>

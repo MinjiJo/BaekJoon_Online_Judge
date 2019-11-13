@@ -1,0 +1,39 @@
+<%--ServletContext을 이용한 예제 --%>
+<%@ page contentType="text/html; charset=EUC-KR"%>
+<%@ page import="java.io.File" %>
+<%@ page import="java.io.*" %>
+<%@ page import="java.net.*" %>
+
+<%--html화면에서 jsp페이지의 공백 없애는 JSP코드 --%>
+<%@ page trimDirectiveWhitespaces="true" %>
+
+<%
+	request.setCharacterEncoding("euc-kr");
+	String fileName = request.getParameter("file_name");
+	System.out.println("fileName = " + fileName);
+	
+	String savePath = "upload";
+	
+	//서블릿의 실행 환경 정보를 담고 있는 객체를 리턴합니다.
+	//(application 내장 객체를 리턴합니다.)
+	ServletContext context = pageContext.getServletContext();
+	String sDownloadPath = context.getRealPath(savePath);
+	//위 두 문장을 한 문장으로 나타내면 다음과 같습니다.
+	//String sDownloadPath = application.getRealPath(savePath)
+	
+	//String sFilePath = sDownloadPath + "\\" + fileName; //"\"
+	String sFilePath = sDownloadPath + "/" + fileName;
+	System.out.println(sFilePath);
+	
+	byte b[] = new byte[4096];
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

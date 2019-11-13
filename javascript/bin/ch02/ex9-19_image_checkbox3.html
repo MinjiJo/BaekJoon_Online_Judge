@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>모든 체크박스 선택/해제</div>
+<hr>
+<form>
+	<label>
+		<input type="checkbox" name="all" value='모두 선택/해제'>All<br>
+	</label>
+	<label>
+		<input type="checkbox" name="icon" value="image/slack.png">slack
+	</label>
+	<label>
+		<input type="checkbox" name="icon" value="image/safari.png">safari
+	</label>
+	<label>
+		<input type="checkbox" name="icon" value="image/viber.png">viber
+	</label>
+</form>
+<script>
+var all = document.getElementsByName('all');
+all[0].addEventListener("click",function(){
+	var icons = document.getElementsByName('icon');
+	for(var i = 0; i < icons.length; i++){
+		icons[i].checked = event.currentTarget.checked;
+		//icons[i].checked = this.checked;
+	}
+});
+</script>
+</body>
+</html>

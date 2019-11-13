@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>loginSuccess</title>
+<style>
+div{color:green;}
+</style>
+</head>
+<body>
+
+<%
+String web_id = application.getInitParameter("id"); 
+String web_pass = application.getInitParameter("password");
+
+String id = request.getParameter("id");
+String pass = request.getParameter("passwd");
+
+if(web_id.equals(id) && web_pass.equals(pass)){ 
+	out.print("<script>alert('로그인에 성공하셨습니다');");
+	out.print("history.back();</script>");
+} else {
+	out.print("<script>alert('로그인에 실패하셨습니다.');");
+	out.print("href='templatetest.jsp';</script>");
+}
+%>
+<jsp:include page='login.'>
+	<jsp:param name="id" value="<%=web_id %>"/>
+	<jsp:param name="pass" value="<%=web_pass %>"/>
+</jsp:include>
+</body>
+</html>

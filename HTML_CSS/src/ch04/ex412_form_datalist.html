@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>월드컵 참가국</title>
+	</head>
+	<body>
+		<form action="result.html" method="get">
+			<h3>월드컵 참가국</h3>
+			참가국 : <input type="text" size="12"
+						  list="country" name="con">
+			<!-- input태그의 list속성 값과 datalist태그의 id속성 값이 일치해야 함 -->
+			<datalist id="country"><!-- 데이터 목록 기능 -->
+				<option value="스페인">1조</option>
+				<option value="스위스">2조</option>
+				<option value="영국">3조</option>
+				<option value="독일">4조</option>
+				<option value="한국"></option>
+			</datalist>
+			<input type="submit" value="참가">
+		</form>
+		
+	</body>
+</html>

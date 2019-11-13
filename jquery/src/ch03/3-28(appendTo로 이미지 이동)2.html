@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = "../js/jquery-3.4.1.js"></script>
+<!-- 문서 객체 이동
+ 	 $(A).appendTo(B) : A를 B의 뒷부분에 추가합니다. -->
+<style>
+	img{ width : 100px;
+		 height: 100px;}
+</style>
+<script>
+	$(document).ready(function(){
+		//함수를 2초마다 실행합니다.
+		setInterval(function(){
+			//첫 번재 이미지를 마지막으로 보냅니다.
+			$('img').first().appendTo('body');
+		}, 2000);
+	})
+</script>
+</head>
+<body>
+	<img src="../image/itunes.png">
+	<img src="../image/safari.png">
+	<img src="../image/slack.png">
+	<img src="../image/viber.png">
+	<img src="../image/twitter.png">
+</body>
+</html>

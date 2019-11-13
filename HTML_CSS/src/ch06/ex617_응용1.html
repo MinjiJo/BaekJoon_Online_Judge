@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css 동적</title>
+<style>
+.container {
+	/* cursor : 마우스 커서 모양을 바꾸는 속성
+		pointer - 손가락 모양
+		wait	- 로딩
+	*/
+	cursor: pointer;
+}
+
+.bar1, .bar2, .bar3{
+	width: 35px;
+	height: 5px;
+	background-color: #333;
+	margin: 6px 0;
+	position: relative;
+	left: 100px;
+	top: 100px;
+}
+
+/* 첫번째 bar */
+.container:hover > .bar1 {
+	transform: rotate(-46.8deg);
+	transition: 0.5s;
+}
+
+/* 두번째 bar : 투명도 속성인 opacity를 사용해서 보이지 않게 처리 */
+.container:hover > .bar2 {
+	/*opacity: 0;*/
+	visibility: hidden;
+}
+
+/* 세번째 bar */
+.container:hover > .bar3 {
+	transform: rotate(46.8deg);
+	transition: 0.5s;
+}
+
+/*	숙제 제출했던 코드
+	#div{ width: 100px; height: 10px; background: black; margin: 10px;}
+	#div-part { position: fixed; top: 20px; left: 20px;}
+	#div-part:hover > div:first-child{
+		transform: rotate(-25deg);
+		transition: transform 1s;
+	}
+	#div-part:hover > div:nth-child(2){
+		visibility: hidden;
+		transition: visibility;
+	}
+	#div-part:hover > div:last-child{
+		transform: rotate(25deg);
+		transition: transform 1s;
+	}
+*/
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="bar1"></div>
+	<div class="bar2"></div>
+	<div class="bar3"></div>
+</div>
+<!-- 숙제 제출했던 코드 
+<div id="div-part">
+	<div id="div"></div>
+	<div id="div"></div>
+	<div id="div"></div>
+</div> -->
+</body>
+</html>

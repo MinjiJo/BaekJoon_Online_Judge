@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	/*
+	1. 정규 표현식은 문자열에 나타나는 특정 문자 조합과 대응시키기 위해 사용되는 패턴입니다.
+		자바스크립트에서 정규 표현식은 객체입니다.
+	2. 표현 작성 방법
+		1) 정규 표현식 리터럴 사용법
+			- 슬래쉬 사이에 표현식을 넣는 방식
+			예) var reg = /^[0-9]{6}-[0-9]{7}$/;
+				① // 사이에 표현식을 넣는다.
+				② ^ : 정규 표현식 문자열 시작
+				③ $ : 정규 표현식 문자열 끝
+				④ [ ] : 안에 있는 문자 중 하나를 선택하고 범위는 '-'로 지정'
+				⑤ [0-9] : 0부터 9까지
+				⑥ { } : 반복수
+					예){3,4}
+						{4}
+			2) new RegExp() 사용법			
+				예) var reg = new RegExp("^[0-9]{6}-[0-9]{7}$"); 
+	*/
+	//var reg = /^[0-9]{6}-[0-9]{7}$/;
+	var reg = /^[0-9]{6}-[1-4]{1}[0-9]{6}$/;
+	//var reg = new RegExp("^[0-9]{6}-[0-9]{7}$");
+	
+	do{
+		var jumin = prompt("주민번호를 입력하세요?", "810908-3234567");
+		var pandan = reg.test(jumin);
+		if(!pandan){
+			alert("주민번호 형식을 확인하세요");
+		}
+	}while(!pandan);
+	
+	var test = jumin.substr(7,1);
+	if(test == 1 || test == 3){
+		document.write("남자")
+		document.body.style.background = "purple";
+	}else if(test == 2 || test == 4){
+		document.write("여자")
+		document.body.style.background = "pink";
+	}
+</script>
+</body>
+</html>
