@@ -1,9 +1,0 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    
-<%if(session.getAttribute("id") != null) {%>
-	<h3> <%=session.getAttribute("id") %>님이 로그인 되었습니다. <form action="login">로그아웃</form></h3>
-<%} else {%>
-	<h3><a href="login.jsp">로그인</a></h3>
-<%}%>
-<hr>
