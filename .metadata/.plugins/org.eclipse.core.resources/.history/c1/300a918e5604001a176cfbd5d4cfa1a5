@@ -1,8 +1,0 @@
-package _8.config;
-
-public class Snippet {
-	public static void main(String[] args) {
-		config.getInitParameter("¿Ã∏ß")
-	}
-}
-
