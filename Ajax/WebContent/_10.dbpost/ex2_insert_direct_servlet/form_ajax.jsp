@@ -42,8 +42,9 @@
 		//데이터를 추가합니다.
 		$("#insert_form").submit(function(e){
 			selectData("post");
+			//기본 이벤트를 제거합니다.
 			e.preventDefault();
-		})
+		});//submit end;
 	})
 </script>
 </head>

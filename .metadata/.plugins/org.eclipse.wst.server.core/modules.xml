@@ -5,4 +5,5 @@
   <module moduleId="org.eclipse.jst.jee.server:JspProject2_Cookie" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Ajax" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:JspProject" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Ajax_Servlet" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>

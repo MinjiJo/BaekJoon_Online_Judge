@@ -67,6 +67,10 @@ C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\447401771.ind
 \JspProject\src
 C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3280672635.index
 \JspProject\src
+C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2940215090.index
+\Ajax_Servlet\src
+C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1249927138.index
+\Ajax_Servlet\src
 C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2344925614.index
 \JspProject\src
 C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2848194645.index
@@ -96,6 +100,8 @@ C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2085374849.in
 C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2498068565.index
 \Ajax\src
 C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4169201290.index
+\JspProject\src
+C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2437786896.index
 \JspProject\src
 C:\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\678802743.index
 \JspProject\src

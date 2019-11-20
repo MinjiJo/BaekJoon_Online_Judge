@@ -9,16 +9,13 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-
-public class DAO {
+public class DAO2 {
 	private DataSource ds; // DataSource ds 는 아파치톰캣이 제공하는 DBCP(DB Connection Pool) 이다.
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
 
-	public DAO() {
+	public DAO2() {
 		try {
 			Context init = new InitialContext();
 			ds = (DataSource) init.lookup("java:/comp/env/jdbc/OracleDB");
@@ -61,26 +58,29 @@ public class DAO {
 		} return result;
 	}
 	
-	public JsonArray getList() {
-		JsonArray jsonArray = new JsonArray();
-		
+	public String getList() {
+		//JSON 형태로 데이터를 만듭니다.
+		StringBuffer sb = new StringBuffer();
 		try {
 			conn = ds.getConnection();
-			
 			String sql = "select * from products order by id";
 			pstmt = conn.prepareStatement(sql);
-			
-			System.out.println(sql);
 			rs = pstmt.executeQuery();
 			
+			int i = 0;
 			while(rs.next()) {
-				JsonObject jsonObject = new JsonObject();
-				jsonObject.addProperty("id", rs.getInt(1));
-				jsonObject.addProperty("name", rs.getString(2));
-				jsonObject.addProperty("modelnumber", rs.getString(3));
-				jsonObject.addProperty("series", rs.getString(4));
-				jsonArray.add(jsonObject);
-			}			
+				i++;
+				if(i==1)sb.append("[");
+				sb.append("{\"id\":\"" + rs.getInt(1) + "\", ");
+				sb.append("\"name\":\"" + rs.getString(2) + "\", ");
+				sb.append("\"modelnumber\":\"" + rs.getString(3) + "\", ");
+				sb.append("\"series\":\"" + rs.getString(4) + "\"},");
+			}
+			if(i!=0) {
+				sb.deleteCharAt(sb.length()-1);//맨 마지막 콤마를 제거합니다.
+				sb.append("]");
+			}
+			
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -100,6 +100,6 @@ public class DAO {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		} return jsonArray;
+		} return sb.toString();
 	}
 }
