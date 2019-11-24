@@ -27,5 +27,14 @@
 	 		<h1>${id }님 로그인 성공</h1>
 	 	</c:otherwise>
 	 </c:choose>
+	 
+	 <c:choose>
+	 	<c:when test="${empty sessionScope.id }">
+	 		<h1>로그인하셔야 합니다.</h1>
+	 	</c:when>
+	 	<c:otherwise>
+	 		<h1>${id }님 로그인 성공</h1>
+	 	</c:otherwise>
+	 </c:choose>
 </body>
 </html>

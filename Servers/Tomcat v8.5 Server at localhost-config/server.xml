@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="JspProject2_Cookie" path="/JspProject2_Cookie" reloadable="true" source="org.eclipse.jst.jee.server:JspProject2_Cookie"/><Context docBase="JspProject" path="/JspProject" reloadable="true" source="org.eclipse.jst.jee.server:JspProject"/><Context docBase="Ajax" path="/Ajax" reloadable="true" source="org.eclipse.jst.jee.server:Ajax"/><Context docBase="Test" path="/Test" reloadable="true" source="org.eclipse.jst.jee.server:Test"/><Context docBase="Ajax_Servlet" path="/Ajax_Servlet" reloadable="true" source="org.eclipse.jst.jee.server:Ajax_Servlet"/></Host>
+      <Context docBase="JspProject2_Cookie" path="/JspProject2_Cookie" reloadable="true" source="org.eclipse.jst.jee.server:JspProject2_Cookie"/><Context docBase="JspProject" path="/JspProject" reloadable="true" source="org.eclipse.jst.jee.server:JspProject"/><Context docBase="Ajax" path="/Ajax" reloadable="true" source="org.eclipse.jst.jee.server:Ajax"/><Context docBase="Test" path="/Test" reloadable="true" source="org.eclipse.jst.jee.server:Test"/><Context docBase="Ajax_Servlet" path="/Ajax_Servlet" reloadable="true" source="org.eclipse.jst.jee.server:Ajax_Servlet"/><Context docBase="Board" path="/Board" reloadable="true" source="org.eclipse.jst.jee.server:Board"/></Host>
     </Engine>
   </Service>
 </Server>

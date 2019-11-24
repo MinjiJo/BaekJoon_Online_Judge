@@ -57,7 +57,7 @@ public class dbpost extends HttpServlet {
 		vo.setName(request.getParameter("name"));
 		vo.setModelnumber(request.getParameter("modelnumber"));
 		vo.setSeries(request.getParameter("series"));
-		DAO2 dao = new DAO2();
+		DAO dao = new DAO();
 		int result = dao.insert(vo);
 		if(result==1) {
 			System.out.println("»ðÀÔ ¼º°ø");

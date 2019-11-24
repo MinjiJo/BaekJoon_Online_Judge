@@ -73,3 +73,9 @@
 11월 18, 2019 17:31:45.26 [12356:6240:1118/173145.261:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
 11월 18, 2019 17:57:49.32 
 11월 18, 2019 17:57:49.32 KLIB_SelfTest return : KLR_OK
+
+11월 20, 2019 18:01:26.57 NEW SESSION
+11월 20, 2019 18:01:26.57 
+11월 20, 2019 18:01:26.57 KLIB_SelfTest return : KLR_OK
+11월 20, 2019 18:01:33.68 
+11월 20, 2019 18:01:33.68 KLIB_SelfTest return : KLR_OK

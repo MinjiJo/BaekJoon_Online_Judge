@@ -159,6 +159,8 @@
 	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxIdle="100" maxTotal="500" name="jdbc/myoracle" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
 </Context><Context docBase="C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Ajax_Servlet" path="/Ajax_Servlet" reloadable="true" source="org.eclipse.jst.jee.server:Ajax_Servlet">
 	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxIdle="100" maxTotal="500" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
+</Context><Context docBase="C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Board" path="/Board" reloadable="true" source="org.eclipse.jst.jee.server:Board">
+	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxIdle="100" maxTotal="500" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
 </Context></Host>
     </Engine>
   </Service>

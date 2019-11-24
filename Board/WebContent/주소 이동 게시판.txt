@@ -1,0 +1,25 @@
+   View
+login.net		->	FrontController (서블릿)
+loginForm.jsp	<-	
+
+회원가입 클릭 
+join.net		->	FrontController (서블릿)
+joinForm.jsp	<-
+
+아이디 중복 검사
+idcheck.net		-> FrontController (서블릿)									->	IdCheckAction.java	->	DAO
+0 또는 -1			<- response.getWriter().append(Integer.toString(result))	<-		return null		<-
+
+joinProcess.net	->	FrontController (서블릿)	->			JoinProcessAction	->		DAO
+login.net		<-										성공시				<-
+history.back()	<-										실패시				<-
+
+loginProcess.net->	FrontController	->	LoginProcessAction.java		-> DAO
+BoardList.bo	<-	FrontController	<-	아이디와 비밀번호 일치시				<-
+login.net		<-	FrontController	<-	아이디 또는 비밀번호 불일치시			<-
+
+BoardList.bo		->	FrontController	->	BoardListAction			->	DAO
+qna_board_list.jsp	<-	FrontController	<-	BoardListAction			<-
+
+BoardWrite.bo		->	FrontController
+qna_board_write.jsp	<-	FrontController
