@@ -58,6 +58,7 @@
 		<label for="upfile">
 			<img src="image/attach.png" alt="사막"></label>
 		<input type="file" id="upfile" name="BOARD_FILE">
+		<span id="filevalue"></span>
 	</div>
 	<div class="form-group">
 		<button type=submit class="btn btn-primary">등록</button>
@@ -65,46 +66,5 @@
 	</div>
 </form>
 </div>
-<%
-	String uploadPath = application.getRealPath("upload");
-	out.print(uploadPath);
-	
-	int size = 10*1024*1024; //파일 최대 크기를 10MB로 지정합니다.
-	String name="";
-	String subject="";
-	String filename="";
-	String origfilename="";
-	
-	try{
-		//업로드를 담당하는 부분입니다.
-		//첫 번째 인자 request : 폼에서 가져온 값을 얻기 위해 request객체를 전달해 줍니다.
-		//두 번째 인자 uploadPath : 업로드될 파일의 위치 입니다.
-		//세 번째 인자 size : 업로드 할 크기이며 지정 크기보다 크면 Exception발생합니다.
-		//네 번째 인자 "euc-kr" : 파일 이름이 한글인 경우 처리하는 부분입니다.
-		//다섯 번째 인자 : 똑같은 파일을 업로드 할 경우 중복되지 않도록 자동으로
-		//파일이름을 변환해주는 기능을 합니다.
-		MultipartRequest multi=new MultipartRequest(request,
-							uploadPath,
-							size,
-							"utf-8",
-				new DefaultFileRenamePolicy());
-	
-		//name=multi.getParameter("name");
-		//subject=multi.getParameter("subject");
-
-		//업로드된 파일의 시스템 상에 업로드된 실제 파일명을 얻어 옵니다.
-		filename = multi.getFilesystemName("fileName");
-		out.println("<br>multi.getFilesystemName(fileName)="
-						+ filename);
-		
-		//업로드된 파일의 원본 파일명을 얻어 옵니다.
-		origfilename = multi.getOriginalFileName("fileName");
-		out.println("<br>multi.getOriginalFileName(fileName)="
-						+ origfilename);
-	}catch(Exception e){
-		//e.printStackTrace();
-		out.print("에러입니다.");
-	}
-%>
 </body>
 </html>

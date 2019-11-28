@@ -15,4 +15,13 @@ CREATE TABLE BOARD(
 	PRIMARY KEY(BOARD_NUM)
 );
 
+select * from board order by board_num;
+
+-- board 테이블 복사본 만들기
+create table board_copy5
+as
 select * from board;
+
+--복사 테이블에서 데이터 삽입
+insert into board
+select * from BOARD_COPY5

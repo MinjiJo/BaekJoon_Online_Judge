@@ -16,18 +16,16 @@ public class LoginProcessAction implements Action {
 		request.setCharacterEncoding("utf-8");
 		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
-		MemberDAO dao = new MemberDAO();
-		int result = dao.isId(id, pass);
+		MemberDAO mdao = new MemberDAO();
+		int result = mdao.isId(id, pass);
 		System.out.println("결과는 " + result);
 		
 		if(result == 1) {
 			HttpSession session = request.getSession();
 			//로그인  성공
 			session.setAttribute("id", id);
-			//forward.setPath("BoardList.bo");
-			forward.setPath("BoardWrite.bo");
-			//forward.setRedirect(false);
 			forward.setRedirect(true);
+			forward.setPath("BoardList.bo");
 		} else {
 			String message = "비밀번호가 일치하지 않습니다.";
 			if(result == -1)

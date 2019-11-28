@@ -7,5 +7,3 @@ create table cookie_member(
 
 select * from cookie_member
 delete from COOKIE_MEMBER
-
-select pass from cookie_member where id = 'id'

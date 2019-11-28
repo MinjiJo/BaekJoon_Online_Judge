@@ -72,6 +72,52 @@ public class FrontController extends HttpServlet {
     			e.printStackTrace();
     		}
     	}
+    	//member_update.net
+    	else if(command.equals("/member_update.net")) {
+    		action = new Member_updateAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	}
+    	//updateProcess.net
+    	else if(command.equals("/updateProcess.net")) {
+    		action = new UpdateProcessAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/member_list.net")) {
+    		action = new ListAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/member_info.net")) {
+    		action = new Member_infoAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/member_delete.net")) {
+    		action = new Member_deleteAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/logout.net")) {
+    		action = new LogoutAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} 
     	
     	if(forward != null) {
     		if(forward.isRedirect()) {//리다이렉트 됩니다.

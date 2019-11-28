@@ -14,7 +14,7 @@ public class joinProcessAction implements Action {
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
 		request.setCharacterEncoding("utf-8");
-		String id=request.getParameter("id");
+		String id = request.getParameter("id");
 		String pass = request.getParameter("pass");
 		String name = request.getParameter("name");
 		int age = Integer.parseInt(request.getParameter("age"));
@@ -37,7 +37,7 @@ public class joinProcessAction implements Action {
 			forward.setPath("login.net");
 			forward.setRedirect(true);
 		} else if(result == -1) {
-			response.setContentType("text/html);charset=utf-8");
+			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script>");
 			out.println("alert('아이디가 중복되었습니다. 다시 입력하세요');");
@@ -47,7 +47,6 @@ public class joinProcessAction implements Action {
 			out.close();
 			return null;
 		}
-		
 		return forward;
 	}
 }	

@@ -52,6 +52,66 @@ public class BoardFrontController extends HttpServlet {
     		forward=new ActionForward();
     		forward.setRedirect(false);	//포워딩 방식으로 주소가 바뀌지 않아요
     		forward.setPath("board/qna_board_write.jsp");
+    	} else if(command.equals("/BoardAddAction.bo")) {
+    		action = new BoardAddAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/BoardDetailAction.bo")) {
+    		action = new BoardDetailAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/BoardReplyView.bo")) {
+    		action = new BoardReplyView();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/BoardReplyAction.bo")) {
+    		action = new BoardReplyAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/BoardModifyView.bo")) {
+    		action = new BoardModifyView();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/BoardModifyAction.bo")) {
+    		action = new BoardModifyAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/BoardDelete.bo")) {
+    		forward=new ActionForward();
+    		forward.setRedirect(false);	//포워딩 방식으로 주소가 바뀌지 않아요
+    		forward.setPath("board/qna_board_delete.jsp");
+    	} else if(command.equals("/BoardFileDown.bo")) {
+    		action = new BoardFileDownAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
+    	} else if(command.equals("/BoardDeleteAction.bo")) {
+    		action = new BoardDeleteAction();
+    		try {
+    			forward=action.execute(request, response);
+    		} catch(Exception e) {
+    			e.printStackTrace();
+    		}
     	}
     	
     	if(forward != null) {

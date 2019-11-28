@@ -14,7 +14,8 @@ public class BoardBean {
 	private int BOARD_RE_SEQ; // 답변 글의 순서
 	private int BOARD_READCOUNT; // 글의 조회수
 	private Date BOARD_DATE; // 글의 작성 날짜
-
+	//이곳에서 오른쪽 마우스 버튼 클릭 후 -> Source
+	//-> Generate Getters and Setters(alt + shift + s)
 	public int getBOARD_NUM() {
 		return BOARD_NUM;
 	}
