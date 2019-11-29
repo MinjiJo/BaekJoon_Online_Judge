@@ -7,4 +7,5 @@
   <module moduleId="org.eclipse.jst.jee.server:Board" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:JspProject" serverId="Tomcat v8.5 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:Ajax_Servlet" serverId="Tomcat v8.5 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:Board_Ajax_bootstrap" serverId="Tomcat v8.5 Server at localhost"/>
 </modules>
