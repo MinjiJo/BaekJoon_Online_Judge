@@ -7,6 +7,11 @@
 <head>
 	<jsp:include page="header.jsp" />
 	<title>MVC 게시판 - view</title>
+	<style>
+	#myModal {
+		display: none;
+	}
+	</style>
 </head>
 <body>
 	<div class="container">
@@ -49,16 +54,43 @@
 					<a href="BoardModifyView.bo?num=${boarddata.BOARD_NUM }">
 						<button class="btn btn-info">수정</button>
 					</a>
-					<a href="BoardDelete.bo?num=${boarddata.BOARD_NUM }">
-						<button class="btn btn-danger">삭제</button>
+					<a href="#">
+						<button class="btn btn-danger" data-toggle="modal"
+								data-target="#myModal">삭제</button>
 					</a>
 				</c:if>
-					<a href="BoardList.bo">
+					<a href="./BoardList.bo">
 						<button class="btn btn-primary">목록</button>
 					</a>
 				</td>
 			</tr>
 		</table>
+		<%--게시판 수정 end --%>
+		
+		<%-- modal 시작 --%>
+		<div class="modal" id="myModal">
+	      <div class="modal-dialog">
+	         <div class="modal-content">
+	
+	            <!-- Modal body -->
+	            <div class="modal-body">
+	               <form name="deleteForm" action="BoardDeleteAction.bo"
+	                  	 method="post">
+	                  <input type="hidden" name="num" value="${param.num}">
+	
+	                  <div class="form-group">
+	                     <label for="pwd">비밀번호</label> 
+	                     <input type="password"
+	                       		class="form-control" placeholder="Enter password"
+	                        	name="BOARD_PASS" id="board_pass">
+	                  </div>
+	                  <button type="submit" class="btn btn-primary" >Submit</button>
+					  <button type="button" class="btn btn-danger">Close</button>
+	               </form>
+	            </div>
+	         </div>
+	      </div>
+	   </div>
 	</div>
 </body>
 </html>

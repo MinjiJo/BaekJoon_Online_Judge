@@ -419,14 +419,15 @@ public class BoardDAO {
 	
 	public boolean boardModify(BoardBean board) {
 		String sql = "update board "
-				+ "set BOARD_SUBJECT = ?, BOARD_CONTENT = ? "
+				+ "set BOARD_SUBJECT = ?, BOARD_CONTENT = ?, BOARD_FILE = ? "
 				+ "where BOARD_NUM = ?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, board.getBOARD_SUBJECT());
 			pstmt.setString(2, board.getBOARD_CONTENT());
-			pstmt.setInt(3, board.getBOARD_NUM());
+			pstmt.setString(3, board.getBOARD_FILE());
+			pstmt.setInt(4, board.getBOARD_NUM());
 			int result = pstmt.executeUpdate();
 			if(result == 1)
 				return true;

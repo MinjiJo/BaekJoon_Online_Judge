@@ -22,8 +22,8 @@
 </head>
 <body>
 <div class="container">
-<form action="BoardModifyAction.bo"
-	  method="post"	name="modifyform">
+<form action="BoardModifyAction.bo" method="post"
+	  enctype="multipart/form-data"	name="modifyform">
 	<input type="hidden" name="BOARD_NUM"
 		   value="${boarddata.BOARD_NUM }">
 	<h1>MVC 게시판 - 수정</h1>
@@ -46,13 +46,17 @@
 			      rows="10">${boarddata.BOARD_CONTENT }</textarea>
 	</div>
 	
-	<!-- 파일이 첨부되어 있으면 -->
-	<c:if test="${!empty boarddata.BOARD_FILE }">
-	<div class="form-group">
+	<%--원문글인 경우에만 파일 첨부 수정가능합니다. --%>
+	<c:if test="${boarddata.BOARD_RE_LEV==0 }">
+	<div class="form-group read">
 		<label for="board_file">파일 첨부</label>
-		<div class="form-control">
-			&nbsp;&nbsp;${boarddata.BOARD_FILE }
-		</div>
+		<label for="upfile">
+			<img src="image/attach.png" alt="파일첨부" width="20px">
+		</label>
+		<input type="file" id="upfile" name="BOARD_FILE">
+		<span id="filevalue">${boarddata.BOARD_FILE }</span>
+		<img src="image/remove.png" alt="파일삭제"
+			 width="10px" class="remove">
 	</div>
 	</c:if>
 	
