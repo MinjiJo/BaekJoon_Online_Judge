@@ -79,3 +79,8 @@
 11월 20, 2019 18:01:26.57 KLIB_SelfTest return : KLR_OK
 11월 20, 2019 18:01:33.68 
 11월 20, 2019 18:01:33.68 KLIB_SelfTest return : KLR_OK
+
+12월 02, 2019 17:35:38.96 NEW SESSION
+12월 02, 2019 17:35:38.96 [8080:14028:1202/173538.958:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 02, 2019 17:48:16.88 
+12월 02, 2019 17:48:16.88 KLIB_SelfTest return : KLR_OK

@@ -417,6 +417,7 @@ public class BoardDAO {
 		return false;
 	}//isBoardWriter end
 	
+	//글 수정 - 파일 첨부 경우
 	public boolean boardModify(BoardBean board) {
 		String sql = "update board "
 				+ "set BOARD_SUBJECT = ?, BOARD_CONTENT = ?, BOARD_FILE = ? "
@@ -429,8 +430,10 @@ public class BoardDAO {
 			pstmt.setString(3, board.getBOARD_FILE());
 			pstmt.setInt(4, board.getBOARD_NUM());
 			int result = pstmt.executeUpdate();
-			if(result == 1)
+			if(result == 1) {
+				System.out.println("성공 업데이트");
 				return true;
+			}
 		} catch (SQLException ex) {
 			System.out.println("boardModify() 에러 : " + ex);
 			ex.printStackTrace();

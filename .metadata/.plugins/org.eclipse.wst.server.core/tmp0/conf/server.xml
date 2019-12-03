@@ -163,6 +163,8 @@
 	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxIdle="100" maxTotal="500" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
 </Context><Context docBase="C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Board_Ajax_bootstrap" path="/Board_Ajax_bootstrap" reloadable="true" source="org.eclipse.jst.jee.server:Board_Ajax_bootstrap">
 	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxIdle="100" maxTotal="500" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
+</Context><Context docBase="C:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Board_Ajax_Attatch_bootstrap" path="/Board_Ajax_Attatch_bootstrap" reloadable="true" source="org.eclipse.jst.jee.server:Board_Ajax_Attatch_bootstrap">
+	<Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxIdle="100" maxTotal="500" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@127.0.0.1:1521:xe" username="scott"/>
 </Context></Host>
     </Engine>
   </Service>
