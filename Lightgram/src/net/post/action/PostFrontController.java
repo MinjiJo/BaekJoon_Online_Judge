@@ -68,14 +68,7 @@ public class PostFrontController extends javax.servlet.http.HttpServlet {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-	} else if(command.equals("/deleteAction.do")) {
-		action = new PostDeleteAction();
-		try {
-			forward = action.execute(request, response);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-	}else if(command.equals("/profileImgUpdate.do")) {
+	} else if(command.equals("/profileImgUpdate.do")) {
 		action = new ProfileImgUpdateAction();
 		try {
 			forward = action.execute(request, response);
@@ -119,6 +112,83 @@ public class PostFrontController extends javax.servlet.http.HttpServlet {
 		}
 	} else if(command.equals("/followinglist.do")) {
 		action = new FollowingListAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	} else if(command.equals("/postDelete.do")) {
+		action = new PostDeleteAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}else if(command.equals("/postView.do")) {
+		action = new PostViewAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}else if(command.equals("/replyList.do")) {
+		action = new ReplyListAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	} else if(command.equals("/replyWrite.do")) {
+		action = new ReplyWriteAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}else if(command.equals("/reReplyWrite.do")) {
+		action = new ReReplyWriteAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}else if(command.equals("/replyDelete.do")) {
+		action = new ReplyDeleteAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}else if(command.equals("/postUpdate.do")) {
+		action = new PostModifyViewAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}else if(command.equals("/newsfeedPost.do")) {
+		action = new NewsfeedPostAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}else if(command.equals("/likeList.do")) {
+		action = new PostLikeListAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}else if(command.equals("/likeAction.do")) {
+		action = new PostLikeAction();
+		try {
+			forward = action.execute(request, response);
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}else if(command.equals("/newsfeedReplyAction.do")) {
+		action = new NewsfeedReplyAction();
 		try {
 			forward = action.execute(request, response);
 		} catch(Exception e) {

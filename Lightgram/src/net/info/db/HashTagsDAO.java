@@ -52,38 +52,20 @@ public class HashTagsDAO {
 		}
 	}
 
-	public boolean insertHashTag(String hashTag) {
+	public boolean insertHashTag(String id, int itemNum, String hashTag) {
 		try {
 			conn = ds.getConnection();
-			conn.setAutoCommit(false);
-			String sql = "select hashTag from hashTags where hashTag = ?";
+			
+			String sql = "insert into hashTags (hashTag, usedWhere) values (?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, hashTag);
-			rs=pstmt.executeQuery();
-			if(rs.next()) {
-				sql = "update hashTags set usingCount = usingCount + 1 where hashTag = ?";
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, hashTag);
-				pstmt.executeUpdate();
-				conn.commit();
-				return true;
-			} else {
-				sql = "insert into hashTags (hashTag, usingCount) values (?, 1)";
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setString(1, hashTag);
-				pstmt.executeUpdate();
-				conn.commit();
-				return true;
-			}
+			pstmt.setString(2, id + "_" + itemNum);
+			pstmt.executeUpdate();
 			
+			
+			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
-			try {
-				conn.rollback();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 		}finally {
 			close();
 		}
@@ -94,35 +76,18 @@ public class HashTagsDAO {
 		try {
 			result = 0;
 			conn = ds.getConnection();
-			conn.setAutoCommit(false);
-			String sql = "select hashtag from " + id + "_post where id = ?";
+			
+			String sql = "delete from hashTags where usedWhere = ?";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
+			pstmt.setString(1, id+"_"+itemNum);
 			
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) {
-				String[] hashTags = rs.getString(1).split(" ");
-				for(String hashTag : hashTags) {
-					sql = "update hashtags set usingCount = usingCount - 1 where hashTag = ?";
-					pstmt = conn.prepareStatement(sql);
-					pstmt.setString(1, hashTag);
-					result = pstmt.executeUpdate();
-				}
-			}
+			result = pstmt.executeUpdate();
 			
-			if(result != -1) {
-				conn.commit();
-				return true;
-			}
+			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
-			try {
-				conn.rollback();
-			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
 		} finally {
 			close();
 		}

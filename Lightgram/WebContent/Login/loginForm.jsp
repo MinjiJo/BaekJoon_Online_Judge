@@ -19,7 +19,7 @@
 	<form name="loginform" action="loginProcess.net" method="post">
 		<div id="div">
 		<fieldset id="fd1">
-				<h1>Name</h1>							
+				<h1>Lightgram</h1>							
 		<input type="text" name="id" placeholder="  아이디를 입력해주세요" 
 		maxLength="30" id="id"><br>
 		

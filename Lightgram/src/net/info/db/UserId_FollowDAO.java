@@ -75,16 +75,16 @@ public class UserId_FollowDAO {
 			list[2] = new ArrayList<String>();
 			while(rs.next()) {
 				if(rs.getString("id_follower") != null) {
-					list[2].add(rs.getString("id_follower"));
+					list[2].add(rs.getString("id_follower")); // 나를 팔로우한 사람
 					sql = "select profileImg from All_users where id = ?";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setString(1, rs.getString("id_follower"));
 					rs2 = pstmt.executeQuery();
 					if(rs2.next())
-						list[1].add(rs2.getString(1));
+						list[1].add(rs2.getString(1)); // 프로필 이미지
 				}
 				if(rs.getString("id") != null) {
-					list[0].add(rs.getString("id"));
+					list[0].add(rs.getString("id")); // 내가 팔로잉 중인 사람
 				}
 			}
 			
@@ -148,13 +148,13 @@ public class UserId_FollowDAO {
 		return null;
 	}
 
-	public int follow(String id, String selectedId) {	// id를 follow 중인지 검색
+	public int followId(String id, String selectedId) {	// id를 follow 중인지 검색
 		result = 0;
 		try {
 			conn = ds.getConnection();
 			conn.setAutoCommit(false);
 			
-			String sql = "select * from " + id + "_follow id = ?";
+			String sql = "select * from " + id + "_follow where id = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, selectedId);
 			rs = pstmt.executeQuery();
@@ -182,6 +182,49 @@ public class UserId_FollowDAO {
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, id);
 				result = pstmt.executeUpdate();
+				conn.commit();
+				return 0;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		} finally {
+			close();
+		}
+		return -1;
+	}
+
+	public int followHash(String id, String selectedHash) {
+		result = 0;
+		try {
+			conn = ds.getConnection();
+			conn.setAutoCommit(false);
+			
+			String sql = "select * from " + id + "_follow where hashtag = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, selectedHash);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {	//follow 중이면
+				sql = "delete from " + id + "_follow where hashtag = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, selectedHash);
+				result = pstmt.executeUpdate();
+				
+				conn.commit();
+				return 1;
+			} else {	// follow 하지 않으면
+				sql = "insert into " + id + "_follow (hashtag) values (?)";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, selectedHash);
+				result = pstmt.executeUpdate();
+				
 				conn.commit();
 				return 0;
 			}

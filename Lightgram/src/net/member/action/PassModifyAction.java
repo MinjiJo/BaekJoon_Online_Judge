@@ -34,7 +34,7 @@ public class PassModifyAction implements Action {
 		if(result == 1 && result2 == true){
 			out.println("<script>");
 			out.println("alert('비밀번호 변경 완료');");
-			out.println("history.back();");
+			out.println("location.href='Mypage.do'");
 			out.println("</script>");
 			out.close();
 			return null;

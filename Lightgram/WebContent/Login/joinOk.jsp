@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Insert title here</title>
+<title>회원가입 완료</title>
 <script src="jquery-3.4.1.min.js"></script>
 
 <style>
@@ -40,21 +40,24 @@
 	#img1{
 		border-radius:200px;
 	}
+	button:hover{
+	cursor:pointer;
+	}
 </style>
 </head>
 <body>
-	<form name="joinform" action="login.net">
+	<form name="joinform" action="Newsfeed.do">
 		<div id="div">
 		<fieldset id="fd1">
 				<h1>${id}님!</h1>
 				<h2>회원가입을 축하 합니다~</h2>
 						
-		<img src="image/cat_logo.jpg" id="img1">
+		<img src="icons/cat_logo.jpg" id="img1">
 		
 		<div class="login">
-			<br><button type="submit" href="Newsfeed.do" class="submitbtn" id="btn1">버튼을 눌러 주변 친구를 찾아보세요</button>
+			<br><a href="Search.do"><button type="button" class="submitbtn" id="btn1">친구 검색하러 가기</button></a>
 			<br>
-			<br><button type="submit" class="submitbtn" id="btn1">로그인 하러 가기</button>
+			<br><button type="submit" class="submitbtn" id="btn1">뉴스피드 가기</button>
 			<br>
 			<span id="message"></span>			
 		</div>

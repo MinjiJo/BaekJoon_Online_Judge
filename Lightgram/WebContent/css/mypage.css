@@ -1,5 +1,6 @@
 *{
 	box-sizing : border-box;
+
 }
 body{
 	margin-top : 100px;
@@ -8,9 +9,11 @@ body{
 }
 .bg{
 	max-width : 760px;
-	height : 200px;
+	height : 240px;
 	background : #fafafa;
 	margin : auto;
+	border-bottom : 1px solid lightgray;
+	margin-bottom : 30px;
 }
 .bg2{
 	max-width : 760px;
@@ -24,12 +27,13 @@ body{
 	float: left; 
 	width: 33.3%;
 }
+
 .profile{
 	width : 140px;
 	height : 140px;
 	border-radius : 150px;
 	margin-left : 40px;
-	margin-top : 20px;
+	margin-top : 30px;
 }
 .gg{
 	width : 30%;
@@ -39,22 +43,29 @@ body{
 }
 .gg2{
 	width : 70%;
-	height : 47%;
+	height : 45%;
 	float : left;
 	padding-left : 37px;
+	display : inline-flex;
 }
 .gg3{
+	width : 70%;
+	height : 9%;
+	float : left;
+	padding-left : 40px;	
+	padding-top : 3px;
+}
+.gg4{
 	padding-left : 40px;
 	padding-top : 20px;
 	width : 70%;
-	height : 53%;
+	height : 51%;
 	float : left;
 }
 .board{
 	width : 25%;
 	height : 55%;
 	text-align : center;
-	border-radius : 220px;
 	float : left;
 }
 .ow{
@@ -63,18 +74,24 @@ body{
 }
 .h_font{
 	width : 100%;
-	font-size : 24pt;
+	font-size : 22pt;
 	margin-top : 25px;
 	margin-right : -70px;
-	margin-left : 42px;
+	margin-left : 36px;
 	float : left;
+	padding: 8px 4px;
 }
 .update{
 	font-size : 12pt;
 	border : 1px solid rgba(var(--d0b,219,219,219),1);
 	border-radius : 4px;
-	height : 35px;	
+	height : 30px;	
 	margin-top : 30px;
+	margin-left : 20px;
+	padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom-width: 1px;
+    vertical-align: bottom;
 }
 .m15{
 	margin-bottom : 15px;
@@ -87,4 +104,20 @@ a{
 }
 a:hover{
 	text-decoration:none;
+}
+.email{
+	width : 50%;
+	float : left;
+	font-size : 12pt;
+	padding-left : 38px;
+	padding-top : -10x;
+	text-rendering: auto;
+}
+.name{
+	font-size : 12pt;
+	text-rendering: auto;
+	margin-left : 10px;
+}
+.modal-body span{
+	vertical-align: super;
 }

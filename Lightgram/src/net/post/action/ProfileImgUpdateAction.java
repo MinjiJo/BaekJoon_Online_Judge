@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
+import net.member.db.Member;
 import net.member.db.MemberDAO;
 
 public class ProfileImgUpdateAction implements Action {
@@ -20,7 +21,7 @@ public class ProfileImgUpdateAction implements Action {
 		
 		String id = request.getSession().getAttribute("id").toString();
 		
-		String path = "C:\\Eclipse_ee\\Lightgram\\WebContent\\id\\"+id; //폴더 경로
+		String path = "D:\\woozi_workplace\\Lightgram\\WebContent\\id\\"+id; //폴더 경로
 		File Folder = new File(path);
 
 		// 해당 디렉토리가 없을경우 디렉토리를 생성합니다.
@@ -63,17 +64,33 @@ public class ProfileImgUpdateAction implements Action {
 		MemberDAO dao = new MemberDAO();
 		result = dao.profileImgUpdate(id, fileName);
 		
+//		String name = request.getParameter("name");
+//		String email = request.getParameter("email");
+//		Member m = new Member();
+//		
+//		m.setName(request.getParameter("name"));
+//		m.setEmail(request.getParameter("email"));
+//		
+//		boolean result2 = dao.membermodify(m);
+		
 		if(!result) {
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();
 			out.println("<script> alert('변경시 문제발생'); history.back() </script>");
 			out.close();
 			return null;
-		}
-		
-		forward.setRedirect(true);
-		forward.setPath("/Lightgram/Mypage.do");
-		return forward;
+		} 
+//		else if(!result2) {
+//			forward.setRedirect(false);
+//			request.setAttribute("message", "프로필 편집 실패");
+//			forward.setPath("error/error.jsp");
+//			return forward;
+//		}
+//		request.setAttribute("name", name);
+//		request.setAttribute("email", email);
+//		forward.setRedirect(true);
+//		forward.setPath("/Lightgram/Mypage.do");
+		return null;
 	}
 
 }

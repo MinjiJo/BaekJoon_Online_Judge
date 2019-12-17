@@ -19,8 +19,8 @@ public class LoginProcessAction implements Action {
 		if(result == 0) {
 			HttpSession session = request.getSession();
 			session.setAttribute("id", request.getParameter("id"));
-			forward.setRedirect(false);
-			forward.setPath("Mypage.do");
+			forward.setRedirect(true);
+			forward.setPath("/Lightgram/Mypage.do");
 		}else {
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();

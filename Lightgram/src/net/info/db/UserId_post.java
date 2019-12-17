@@ -11,7 +11,6 @@ public class UserId_post {
 	private Date posted_time;
 	private Date alter_time;
 	private String location;
-	private String hashTag;
 	public String getId() {
 		return id;
 	}
@@ -59,11 +58,5 @@ public class UserId_post {
 	}
 	public void setLocation(String location) {
 		this.location = location;
-	}
-	public String getHashTag() {
-		return hashTag;
-	}
-	public void setHashTag(String hashTag) {
-		this.hashTag = hashTag;
 	}
 }

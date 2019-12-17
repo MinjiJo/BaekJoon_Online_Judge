@@ -1,5 +1,6 @@
 package net.post.action;
 
+import java.io.File;
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,8 @@ public class PostDeleteAction implements Action {
 		
 		boolean result = udao.deletePost(id, itemNum);
 		
+		deleteFile("C:\\Eclipse_ee\\Lightgram\\WebContent\\id\\"+id+"\\"+itemNum);
+		
 		if(!result) {
 			response.setContentType("text/html; charset=utf-8");
 			PrintWriter out = response.getWriter();
@@ -26,9 +29,27 @@ public class PostDeleteAction implements Action {
 			return null;
 		}
 		
-		forward.setRedirect(false);
-		forward.setPath("Post/Mypage.jsp");
+		forward.setRedirect(true);
+		forward.setPath("/Lightgram/Mypage.do");
 		return forward;
 	}
+	
+	
+	public static void deleteFile(String path) {
+		File deleteFolder = new File(path);
 
+		if(deleteFolder.exists()){
+			File[] deleteFolderList = deleteFolder.listFiles();
+			
+			for (int i = 0; i < deleteFolderList.length; i++) {
+				if(deleteFolderList[i].isFile()) {
+					deleteFolderList[i].delete();
+				}else {
+					deleteFile(deleteFolderList[i].getPath());
+				}
+				deleteFolderList[i].delete(); 
+			}
+			deleteFolder.delete();
+		}
+	}
 }

@@ -34,3 +34,12 @@ where c.r<20;
 select ROW_NUMBER() OVER(ORDER BY show2_post.posted_time), *
 from show2_post
 order by posted_time;
+
+select * from all_users;
+select * from show8_post_replied;
+
+select b.profileImg, a.* 
+from show8_post_replied a 
+	inner join All_users b 
+	on a.reply_id = b.id 
+where a.itemNum = 1;

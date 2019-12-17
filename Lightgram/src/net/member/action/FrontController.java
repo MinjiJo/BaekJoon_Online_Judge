@@ -56,25 +56,11 @@ public class FrontController extends javax.servlet.http.HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}  else if (command.equals("/member_delete.net")) {
-			action = new Member_deleteAction();
-			try {
-				forward = action.execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (command.equals("/logout.net")) {
+		}  else if (command.equals("/logout.net")) {
 			action = new LogoutAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}else if(command.equals("/withdraw.net")) {
-			action = new WithdrawAction();
-			try {
-				forward = action.execute(request, response);
-			} catch(Exception e) {
 				e.printStackTrace();
 			}
 		} else if(command.equals("/passUpdate.net")) {
@@ -132,6 +118,42 @@ public class FrontController extends javax.servlet.http.HttpServlet {
 			}
 		} else if(command.equals("/follow.net")) {
 			action = new FollowAction();
+			try {
+				forward = action.execute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/pswsearch.net")) {
+	   		forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("Login/pwdSearch.jsp"); 		
+		}	else if(command.equals("/Idsearch.net")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("Login/idSearch.jsp");
+		}else if(command.equals("/member_delete_self.net")) {
+			action = new Member_Delete_SelfAction();
+			try {
+				forward = action.execute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("/member_delete_decide.net")) {
+			action = new Member_Delete_Decide();
+			try {
+				forward = action.execute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/emailcheck.net")) {
+			action = new EmailCheckAction();
+			try {
+				forward = action.execute(request, response);
+			} catch(Exception e) {
+				e.printStackTrace();
+			}
+		}else if(command.equals("/idcheck.net")) {
+			action = new IdCheckAction();
 			try {
 				forward = action.execute(request, response);
 			} catch(Exception e) {

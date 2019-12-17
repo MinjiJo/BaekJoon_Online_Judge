@@ -23,12 +23,12 @@ public class FollowerListAction implements Action {
 		
 		JsonArray idList = new JsonArray();
 		JsonArray picList = new JsonArray();
-		JsonObject jobj = new JsonObject();
+		JsonArray jobj = new JsonArray();
 		for(String f : follows[2]) {
 			if(follows[0].contains(f)) {
-				jobj.addProperty(f, 1);
+				jobj.add(1);
 			}else {
-				jobj.addProperty(f, 0);
+				jobj.add(0);
 			}
 			idList.add(f);
 		}
@@ -41,6 +41,7 @@ public class FollowerListAction implements Action {
 		jarray.add(idList);
 		jarray.add(picList);
 		jarray.add(jobj);
+		
 		PrintWriter out = response.getWriter();
 		out.print(jarray);
 		

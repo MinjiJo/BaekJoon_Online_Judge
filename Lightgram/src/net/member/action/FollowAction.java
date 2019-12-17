@@ -1,6 +1,7 @@
 package net.member.action;
 
 import java.io.PrintWriter;
+import java.net.URLEncoder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,11 +12,24 @@ public class FollowAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String selectedId = request.getParameter("selectedID");
 		String id = request.getSession().getAttribute("id").toString();
+		String selectedId = "";
+		String selectedHash = "";
+		int result = -1;
+		ActionForward forward = new ActionForward();
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		if(request.getParameter("selectedId")!= null) {
+			selectedId = request.getParameter("selectedId");
+			UserId_FollowDAO ufdao = new UserId_FollowDAO(); 
+			result = ufdao.followId(id, selectedId);
+		}
 		
-		UserId_FollowDAO ufdao = new UserId_FollowDAO(); 
-		int result = ufdao.follow(id, selectedId);
+		if(request.getParameter("selectedHash")!= null) {
+			selectedHash = request.getParameter("selectedHash");
+			UserId_FollowDAO ufdao = new UserId_FollowDAO(); 
+			result = ufdao.followHash(id, selectedHash);
+		}
 		
 		PrintWriter out = response.getWriter();
 		if(result == -1) {
@@ -23,8 +37,21 @@ public class FollowAction implements Action {
 			return null;
 		}
 		
-		out.print(result);
-		return null;
+		if(request.getParameter("path") != null) {
+			System.out.println(request.getParameter("path"));
+			String[] path = request.getParameter("path").replaceFirst("_", "?").split(" ");
+			
+			System.out.println(path[0]+"&&"+path[1]);
+			String repath = path[0]+"&&"+path[1];
+			
+			forward.setRedirect(false);
+			forward.setPath(repath);
+			return forward;
+		}
+		
+		forward.setRedirect(true);
+		forward.setPath("/Lightgram/Mypage.do");
+		return forward;
 	}
 
 }

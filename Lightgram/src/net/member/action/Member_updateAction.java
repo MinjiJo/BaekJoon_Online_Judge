@@ -18,6 +18,8 @@ public class Member_updateAction implements Action {
 		
 		HttpSession session = request.getSession();
 		String id = session.getAttribute("id").toString();
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
 		
 		boolean result = false;
 		m.setId(id);
@@ -32,8 +34,11 @@ public class Member_updateAction implements Action {
 			forward.setPath("error/error.jsp");
 			return forward;
 		}
+		request.setAttribute("name", name);
+		request.setAttribute("email", email);
 		forward.setRedirect(false);
-		forward.setPath("/profileUpdate.do");
+		forward.setPath("/Mypage.do");
+		
 		return forward;
 	}
 

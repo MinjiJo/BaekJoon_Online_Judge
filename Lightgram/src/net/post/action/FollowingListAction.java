@@ -16,7 +16,7 @@ public class FollowingListAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		String id = request.getParameter("id");
-		
+		response.setContentType("text/html;charset=utf-8");
 		UserId_FollowDAO ufdao = new UserId_FollowDAO();
 		List<String>[] follows = ufdao.followingList(id);
 		

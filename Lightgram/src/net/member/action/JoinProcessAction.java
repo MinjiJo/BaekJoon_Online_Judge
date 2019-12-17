@@ -17,7 +17,7 @@ public class JoinProcessAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward = new ActionForward();
-		
+		request.setCharacterEncoding("utf-8"); 
 		MemberDAO dao = new MemberDAO();
 		String checkId = request.getParameter("id");
 		String checkEmail = request.getParameter("email");
@@ -55,7 +55,7 @@ public class JoinProcessAction implements Action {
 		result = dao.join(member);
 		
 		if(result == 1) {
-			String path = "C:\\Eclipse_ee\\Lightgram\\WebContent\\id\\"+checkId; //폴더 경로
+			String path = "C:\\workspace\\Lightgram\\WebContent\\id\\"+checkId; //폴더 경로
 			File Folder = new File(path);
 
 			// 해당 디렉토리가 없을경우 디렉토리를 생성합니다.
@@ -70,8 +70,8 @@ public class JoinProcessAction implements Action {
 				System.out.println("이미 폴더가 생성되어 있습니다.");
 			}
 			
-			Folder = new File("C:\\Eclipse_ee\\Lightgram\\WebContent\\image\\cat.png");
-			File Folder2 = new File("C:\\Eclipse_ee\\Lightgram\\WebContent\\id\\"+checkId+"\\"+ checkId +".png");
+			Folder = new File("C:\\workspace\\Lightgram\\WebContent\\image\\cat.png");
+			File Folder2 = new File("C:\\workspace\\Lightgram\\WebContent\\id\\"+checkId+"\\"+ checkId +".png");
 				
 			FileInputStream fis = null;
 			FileOutputStream fos = null;

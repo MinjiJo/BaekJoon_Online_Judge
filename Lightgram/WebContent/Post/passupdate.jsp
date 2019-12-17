@@ -92,7 +92,7 @@
 		<div class = "pd"><a href = "ProfileUpdate.do">프로필 변경</a><br></div>
 		<div class = "pd"><a href = "passUpdate.net">비밀번호 변경</a><br></div>
 		<div class = "pd"><a href = "logout.net">로그아웃</a><br></div>
-		<div class = "pd"><a href = "memberDelete.net">회원 탈퇴</a></div>
+		<div class = "pd"><a href = "member_delete_self.net">회원 탈퇴</a></div>
 	</div>
 	<form action = "passModify.net" method = "post" id = "myform">
 		<div class= "half2">
@@ -102,7 +102,7 @@
 			<input type = "password" name = "newpassword" id = "newpass"></div>
 			<div class = "inp3">비밀번호 확인<br>
 			<input type = "password" name = "passwordcheck" id = "newpasscheck"></div>
-			<button type = "submit" class = "change">변경</button>
+			<button type = "submit" class = "change" style = "cursor:pointer">변경</button>
 		</div>
 		</form>
 	</div>

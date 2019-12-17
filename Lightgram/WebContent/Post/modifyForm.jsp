@@ -5,39 +5,54 @@
 <head>
 <jsp:include page="header.jsp" />
 <LINK REL="SHORTCUT ICON" HREF="http://morfik.homeip.com/favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
     crossorigin="anonymous">
-    <link rel="stylesheet" href="css/add.css">
-  </head>
-  <body>
-    <main class="more">
-	    <div id="menu_action">
-			<div class="picture">
-				<img src="id/${item.id }/${item.itemNum}/${item.pic_url}">
-			</div>
-			<form action="modifyAction.do" method="post" name="boardform">
-				<textarea name="content" cols="500" rows="5" placeholder="어떤 사진인지 설명해주세요"></textarea>
-				<br>
-				<div class="location_select">
-					<select name='level' id="open_level">
-								<option value='1' selected>전체 공개</option>
-								<option value="2">팔로우 공개</option>
-								<option value="3">비공개</option>
-					</select>	
-					<input type="text" name="location" placeholder="지금 어디 계시나요?"> &nbsp;
-				</div>
-				<div class="form-group">
-					<br><br>
-					<button type="submit" class="btn btn-primary">등록</button>
-				</div>
-			</form>
+<link rel="stylesheet" href="css/modifyForm.css">
+<script src="js/modifyForm.js"></script>
+</head>
+<body>
+<form action="modifyAction.do" method="post">
+<input type="hidden" name="itemNum"
+	   value="${post.itemNum }">
+<div class="more">
+	<div id="detail_view">
+		<div id="detail_picture">
+			<img src="id/${post.id }/${post.itemNum }/${post.pic_url}">
 		</div>
-		<div class="menu__width"></div>
-	</main>
+		<div id="detail_right">
+			<div id="detail_header">
+				<div id="detail_profile">
+					<div id="detail_profile_pic">
+						<a href='Search.do?search_word=${post.id }&&search_option=id_sel'><img src="id/${post.id }/${img}"></a>
+					</div>
+					<div id="detail_profile_id_location">
+						<div id="detail_profile_id"><a href='Search.do?search_word=${post.id }&&search_option=id_sel'>${post.id }</a></div>
+						<input type="text" id="detail_profile_location" name="location" value="${post.location }">
+					</div>
+				</div>
+				<div id="button">
+					<input type="submit" class="confirm" value="수정완료">
+					<input type="button" class="confirm" onClick="history.back();" value="수정취소">
+				</div>
+			</div>
+			<div id="right_bottom">
+				<textarea name="detail_text" id="detail_text"
+				  class="detail_text"
+			      rows="10">${post.dataText }</textarea>
+			</div>
+			<select name='level' id="open_level">
+				<option value='1' selected>전체 공개</option>
+				<option value="2">팔로우 공개</option>
+				<option value="3">비공개</option>
+			</select>
+		</div>
+	</div>
+	<div class="menu__width"></div>
+</div>
+</form>
 </body>
 </html>

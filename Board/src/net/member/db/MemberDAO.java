@@ -11,195 +11,55 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import net.member.db.Member;
-
 public class MemberDAO {
-	private DataSource ds; // DataSource ds 는 아파치톰캣이 제공하는 DBCP(DB Connection Pool) 이다.
 	private Connection conn;
-	private PreparedStatement pstmt;
+	private DataSource ds;
 	private ResultSet rs;
+	private PreparedStatement pstmt;
 	int result;
-
-	// 생성자에서 JNDI 리소스를 참조하여 Connection 객체를 얻어옵니다.
+	
 	public MemberDAO() {
 		try {
 			Context init = new InitialContext();
-			ds = (DataSource) init.lookup("java:/comp/env/jdbc/OracleDB");
-		} catch (Exception ex) {
-			System.out.println("DB 연결 실패: " + ex);
-			return;
+			ds = (DataSource)init.lookup("java:comp/env/jdbc/OracleDB");
+		} catch(Exception e) {
+			e.printStackTrace();
 		}
 	}
-
-	public int isId(String id) {
-		try {
-			conn = ds.getConnection();
-			System.out.println("getConnection");
-
-			String sql = "select id from member where id = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				result = 0; // DB에 해당 id가 있습니다.
-			} else {
-				result = -1; // DB에 해당 id가 없습니다.
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
+	
+	public void close() {
+		if(rs != null) {
 			try {
-				if (rs != null) {
-					rs.close();
-					rs = null;
-				}
-				if (pstmt != null) {
-					pstmt.close();
-					pstmt = null;
-				}
-				if (conn != null) {
-					conn.close();
-					conn = null;
-				}
+				rs.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		return result;
-	}
-
-	public int isId(String id, String pass) {
-		try {
-			conn = ds.getConnection();
-			System.out.println("getConnection");
-
-			String sql = "select id, password from member where id = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				if (rs.getString(2).equals(pass)) {
-					result = 1; // 아이디와 비밀번호 일치하는 경우
-				} else {
-					result = 0; // 비밀번호가 일치하지 않는 경우
-				}
-			} else {
-				result = -1; // 아이디가 존재하지 않습니다.
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
+		if(pstmt != null) {
 			try {
-				if (rs != null) {
-					rs.close();
-					rs = null;
-				}
-				if (pstmt != null) {
-					pstmt.close();
-					pstmt = null;
-				}
-				if (conn != null) {
-					conn.close();
-					conn = null;
-				}
+				pstmt.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		return result;
-	}
-
-	public int insert(Member m) {
-		int result = 0;// 초기값
-		try {
-			conn = ds.getConnection();
-			String sql = "insert into member " + "values(?,?,?,?,?,?)";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, m.getId());
-			pstmt.setString(2, m.getPass());
-			pstmt.setString(3, m.getName());
-			pstmt.setInt(4, m.getAge());
-			pstmt.setString(5, m.getGender());
-			pstmt.setString(6, m.getEmail());
-			result = pstmt.executeUpdate();
-
-			// primary key 제약조건 위반했을 경우 발생하는 에러
-		}
-		/*
-		 * catch() { return -1; }
-		 */
-		catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
+		if(conn != null) {
 			try {
-				if (rs != null) {
-					rs.close();
-					rs = null;
-				}
-				if (pstmt != null) {
-					pstmt.close();
-					pstmt = null;
-				}
-				if (conn != null) {
-					conn.close();
-					conn = null;
-				}
+				conn.close();
 			} catch (SQLException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		return result;
 	}
-
-	public Member member_info(String id) {
-		Member m = null;
+	
+	
+	public int join(Member member) {
 		try {
 			conn = ds.getConnection();
-			String sql = "select * from member where id = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				m = new Member();
-				m.setId(rs.getString("id"));
-				m.setPass(rs.getString("password"));
-				m.setName(rs.getString("name"));
-				m.setAge(rs.getInt("age"));
-				m.setGender(rs.getString("gender"));
-				m.setEmail(rs.getString("email"));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-					rs = null;
-				}
-				if (pstmt != null) {
-					pstmt.close();
-					pstmt = null;
-				}
-				if (conn != null) {
-					conn.close();
-					conn = null;
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return m;
-	}
-
-	public int update(Member member) {
-		int result = 0;// 초기값
-		try {
-			conn = ds.getConnection();
-			String sql = "update member " + "set id = ?, password = ?, name = ?, age = ?, gender = ?, email = ? "
-					+ "where id = ?";
+			
+			String sql = "insert into member values(?, ?, ?, ?, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, member.getId());
 			pstmt.setString(2, member.getPass());
@@ -207,203 +67,205 @@ public class MemberDAO {
 			pstmt.setInt(4, member.getAge());
 			pstmt.setString(5, member.getGender());
 			pstmt.setString(6, member.getEmail());
-			pstmt.setString(7, member.getId());
+			
 			result = pstmt.executeUpdate();
-		}
-		// primary key 제약조건 위반했을 경우 발생하는 에러
-		/*
-		 * catch() { return -1; }
-		 */
-		catch (SQLException e) {
+			
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-					rs = null;
-				}
-				if (pstmt != null) {
-					pstmt.close();
-					pstmt = null;
-				}
-				if (conn != null) {
-					conn.close();
-					conn = null;
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			close();
 		}
+		
 		return result;
 	}
-
-	public List<Member> getList() {
-		List<Member> list = new ArrayList<Member>();
+	
+	public int isId(String parameter) {
 		try {
 			conn = ds.getConnection();
-			String sql = "select * from member " 
-						+ "where id != 'admin'";
+			
+			String sql = "select id from member where id = ?";
 			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, parameter);
+			
 			rs = pstmt.executeQuery();
-			/*
-			 * create table member( id varchar2(15), password varchar2(10), name
-			 * varchar2(15), age Number, gender varchar2(5), email varchar2(30), PRIMARY
-			 * KEY(id) );
-			 */
-			while (rs.next()) {
-				Member m = new Member();
-				m.setId(rs.getString("id"));
-				m.setPass(rs.getString("password"));
-				m.setName(rs.getString("name"));
-				m.setAge(rs.getInt("age"));
-				m.setGender(rs.getString("gender"));
-				m.setEmail(rs.getString("email"));
-				list.add(m);
+			
+			if(rs.next())
+				return 0;	//DB에 데이터 있음
+			else
+				return -1;	//DB에 데이터 없음
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return 1;
+	}
+
+	public int isId(String parameter, String parameter2) {
+		try {
+			conn = ds.getConnection();
+			
+			String sql = "select id, password from member where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, parameter);
+			
+			rs = pstmt.executeQuery();
+				
+			if(rs.next()) {
+				if(rs.getString(2).equals(parameter2)) {
+					return 0;
+				}else {
+					return -2;
+				}
+			}else
+				return -1;	//DB에 데이터 없음
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return 0;
+	}
+
+	public Member profile(String id) {
+		Member member = new Member();;
+		try {
+			conn = ds.getConnection();
+			
+			String sql = "select * from member where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			rs = pstmt.executeQuery();
+				
+			if(rs.next()) {
+				member.setId(rs.getString(1));
+				member.setPass(rs.getString(2));
+				member.setName(rs.getString(3));
+				member.setAge(rs.getInt(4));
+				member.setGender(rs.getString(5));
+				member.setEmail(rs.getString(6));
+			}else {
+				return null;	//DB에 데이터 없음
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-					rs = null;
-				}
-				if (pstmt != null) {
-					pstmt.close();
-					pstmt = null;
-				}
-				if (conn != null) {
-					conn.close();
-					conn = null;
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			close();
 		}
-		return list;
-	}// getList end
+		
+		return member;
+	}
 
-	public List<Member> getList(int page, int limit) {
-		// page : 페이지
-		// limit : 페이지 당 목록의 수
-		String list_sql = "select * " 
-				+ "from (select rownum rnum, b.* " 
-						+ "from (select * from member "
-								+ "where id != 'admin' "
-								+ "order by id ) b" 
-						+ ") " 
-				+ "where rnum>=? and rnum<=?";
-
-		List<Member> list = new ArrayList<Member>();
-		// 한 페이지당 10개씩 목록인 경우 1페이지, 2페이지, 3페이지, 4페이지 ...
-		int startrow = (page - 1) * limit + 1; // 읽기 시작할 row 번호(1 11 21 31 ...
-		int endrow = startrow + limit - 1; // 읽을 마지막 row 번호(10 20 30 40 ...
+	public boolean updateProfile(Member member) {
+		int res = 0;
 		try {
 			conn = ds.getConnection();
-			pstmt = conn.prepareStatement(list_sql);
+			
+			String sql = "update member set name = ?, gender = ?, email = ?, password = ? where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, member.getName());
+			pstmt.setString(2, member.getGender());
+			pstmt.setString(3, member.getEmail());
+			pstmt.setString(4, member.getPass());
+			pstmt.setString(5, member.getId());
+			
+			res = pstmt.executeUpdate();
+				
+			if(res == 1) {
+				return true;
+			}else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return false;
+	}
+
+	public boolean deleteMember(String id) {
+		try {
+			conn = ds.getConnection();
+			
+			String sql = "delete from member where id = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			int res = pstmt.executeUpdate();
+				
+			if(res == 1) {
+				return true;
+			}else {
+				return false;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		
+		return false;
+	}
+
+	public int getListCount() {
+		int count=0;
+		try {
+			conn = ds.getConnection();
+			
+			String sql = "select count(*) from member";
+			
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next())
+				count = rs.getInt(1);
+			
+		} catch(Exception e) {
+			System.out.println("리스트 최대 사이즈 계산 중 오류 : " + e);
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return count;
+	}
+
+	public List<Member> getMemberList(int page, int limit) {
+		List<Member> list = new ArrayList<Member>();
+		try {
+			conn = ds.getConnection();
+			
+			String sql = "select * "
+					+ 	" from (select rownum rnum, m.* "
+					+ 			" from member m "
+					+ 			" ) "
+					+ " where rnum >= ? and rnum <= ? and id != 'admin'";
+			
+			pstmt = conn.prepareStatement(sql);
+			int startrow = (page - 1) * limit + 1;
+			int endrow = startrow + limit - 1;
 			pstmt.setInt(1, startrow);
 			pstmt.setInt(2, endrow);
 			rs = pstmt.executeQuery();
-
-			// DB에서 가져온 데이터를 VO객체에 담습니다.
-			while (rs.next()) {
-				Member m = new Member();
-				m.setId(rs.getString("id"));
-				m.setPass(rs.getString("password"));
-				m.setName(rs.getString("name"));
-				m.setAge(rs.getInt("age"));
-				m.setGender(rs.getString("gender"));
-				m.setEmail(rs.getString("email"));
-				list.add(m);
+			
+			while(rs.next()) {
+				Member member = new Member();
+				member.setId(rs.getString(2));
+				member.setPass(rs.getString(3));
+				member.setName(rs.getString(4));
+				member.setAge(rs.getInt(5));
+				member.setGender(rs.getString(6));
+				member.setEmail(rs.getString(7));
+				list.add(member);
 			}
-			return list; // 값을 담을 객체를 저장한 리스트를 호출한 곳으로 가져갑니다.
-		} catch (SQLException ex) {
-			System.out.println("getBoardList() 에러 : " + ex);
-			ex.printStackTrace();
+			return list;
+		} catch(Exception e) {
+			System.out.println("리스트 출력 중 오류 : " + e);
+			e.printStackTrace();
 		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-					rs = null;
-				}
-				if (pstmt != null) {
-					pstmt.close();
-					pstmt = null;
-				}
-				if (conn != null) {
-					conn.close();
-					conn = null;
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+			close();
 		}
 		return null;
-	}// getBoardList메서드
-	
-	public int getListCount() {
-		try {
-			conn = ds.getConnection();
-			System.out.println("getConnection");
-
-			String sql = "select count(id) from member "
-						+ "where id != 'admin'";;
-			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
-			if (rs.next()) {
-				result = rs.getInt(1);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-					rs = null;
-				}
-				if (pstmt != null) {
-					pstmt.close();
-					pstmt = null;
-				}
-				if (conn != null) {
-					conn.close();
-					conn = null;
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return result;
-	}
-	
-	public int delete(String id) {
-		try {
-			conn = ds.getConnection();
-			String sql = "delete from member "
-						+ "where id = ?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, id);
-			result = pstmt.executeUpdate();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (rs != null) {
-					rs.close();
-					rs = null;
-				}
-				if (pstmt != null) {
-					pstmt.close();
-					pstmt = null;
-				}
-				if (conn != null) {
-					conn.close();
-					conn = null;
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return result;
 	}
 }

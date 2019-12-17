@@ -13,6 +13,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import net.info.db.HashTagsDAO;
+import net.info.db.LocationsDAO;
 import net.info.db.UserId_postDAO;
 import net.info.db.UserId_post;
 
@@ -26,7 +27,8 @@ public class PostAddAction implements Action {
 		String id = request.getSession().getAttribute("id").toString();
 		int itemNum = udao.countItemNum(id); 
 		
-		String path = "C:\\Eclipse_ee\\Lightgram\\WebContent\\id\\"+id; //Æú´õ °æ·Î
+		
+		String path = "C:\\workspace\\Lightgram\\WebContent\\id\\"+id; //Æú´õ °æ·Î
 		File Folder = new File(path);
 
 		// ÇØ´ç µð·ºÅä¸®°¡ ¾øÀ»°æ¿ì µð·ºÅä¸®¸¦ »ý¼ºÇÕ´Ï´Ù.
@@ -41,7 +43,7 @@ public class PostAddAction implements Action {
 			System.out.println("ÀÌ¹Ì Æú´õ°¡ »ý¼ºµÇ¾î ÀÖ½À´Ï´Ù.");
 		}
 		
-		path = "C:\\Eclipse_ee\\Lightgram\\WebContent\\id\\"+id+"\\"+itemNum; //Æú´õ °æ·Î
+		path = "C:\\workspace\\Lightgram\\WebContent\\id\\"+id+"\\"+itemNum; //Æú´õ °æ·Î
 		Folder = new File(path);
 
 		// ÇØ´ç µð·ºÅä¸®°¡ ¾øÀ»°æ¿ì µð·ºÅä¸®¸¦ »ý¼ºÇÕ´Ï´Ù.
@@ -68,21 +70,32 @@ public class PostAddAction implements Action {
 		System.out.println("realFolder = " + realFoler);
 		boolean result = false;
 		
+		response.setContentType("text/html; charset=utf-8");
+		
 		MultipartRequest multi = new MultipartRequest(request, path, fileSize, "UTF-8", new DefaultFileRenamePolicy());
 		int level = Integer.parseInt(multi.getParameter("level"));
 		String pic_url = multi.getFilesystemName("pic_url");
-		String location = multi.getParameter("location");
-		String[] data = replaceParameter(multi.getParameter("content"));
-		String dataText = data[0];
-		String hashTag = data[1];
+		String location="";
+		System.out.println("location:" + multi.getParameter("location"));
+		if(multi.getParameter("location") != "" && multi.getParameter("location") != null  ) {
+			location = replaceParameter(multi.getParameter("location"));
+			LocationsDAO ldao = new LocationsDAO();
+			ldao.insertLocations(id, itemNum, location);
+		}
+
+		if(multi.getParameter("content") == null || multi.getParameter("content") == "") {
+			PrintWriter out = response.getWriter();
+			out.print("<script> alert('±Û ³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä'); history.back(); </script>");
+			return null;
+		}
+		String data = replaceParameter(id, itemNum, multi.getParameter("content"));
 		
 		uid.setId(id);
 		uid.setItemNum(itemNum);
 		uid.setLevel(level);
 		uid.setPic_url(pic_url);
 		uid.setLocation(location);
-		uid.setDataText(dataText);
-		uid.setHashTag(hashTag);
+		uid.setDataText(data);
 		
 		result = udao.addItem(uid);
 		
@@ -99,31 +112,38 @@ public class PostAddAction implements Action {
 		return forward;
 	}
 	
-	private String[] replaceParameter(String param) {
-		String result[] = new String[2];
-		result[0] = param;
+	private String replaceParameter(String param) {
+		String result = param;
 		if(param != null) {
-			result[0] = result[0].replaceAll("<", "&lt;");
-			result[0] = result[0].replaceAll(">", "&gt;");
-			result[0] = result[0].replaceAll("\"", "&quot;");
+			result = result.replaceAll("<", "&lt;");
+			result = result.replaceAll(">", "&gt;");
+			result = result.replaceAll("\"", "&quot;");
 		}
-		result = setHashTag(result[0]);
+		
 		return result;	
 	}
 	
-	private String[] setHashTag(String content) {
+	private String replaceParameter(String id, int itemNum, String param) {
+		String result = param;
+		if(param != null) {
+			result = result.replaceAll("<", "&lt;");
+			result = result.replaceAll(">", "&gt;");
+			result = result.replaceAll("\"", "&quot;");
+		}
+		result = setHashTag(id, itemNum, result);
+		return result;	
+	}
+	
+	private String setHashTag(String id, int itemNum, String content) {
 		
 		Pattern p = Pattern.compile("\\#([0-9a-zA-Z°¡-ÆR_]*)");
 		Matcher m = p.matcher(content);
 		
 		HashTagsDAO hdao = new HashTagsDAO();
-		String result[] = new String[2];
-		result[0] = content;
-		result[1]="";
+		String result = content;
 		while(m.find()) {
-			hdao.insertHashTag(m.group());
-			result[0] = result[0].replace(m.group(), "<a href='search.do?hashtag=" + m.group() + "'>" + m.group() + "</a>");
-			result[1] += m.group() + " ";
+			hdao.insertHashTag(id, itemNum, m.group());
+			result = result.replace(m.group(), "<a href='Search.do?search_word=" + m.group().substring(1) + "&&search_option=hash_sel'>" + m.group() + "</a>");
 		}
 		
 		return result; 

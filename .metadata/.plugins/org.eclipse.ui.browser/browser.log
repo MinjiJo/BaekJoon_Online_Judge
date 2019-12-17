@@ -84,3 +84,237 @@
 12월 02, 2019 17:35:38.96 [8080:14028:1202/173538.958:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
 12월 02, 2019 17:48:16.88 
 12월 02, 2019 17:48:16.88 KLIB_SelfTest return : KLR_OK
+
+12월 06, 2019 19:11:36.14 NEW SESSION
+12월 06, 2019 19:11:36.14 [1820:12404:1206/191136.143:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 06, 2019 19:22:36.21 
+12월 06, 2019 19:22:36.21 KLIB_SelfTest return : KLR_OK
+12월 06, 2019 19:22:49.32 [6104:16428:1206/192249.322:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 06, 2019 20:43:44.58 [6104:1108:1206/204344.578:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:43:45.61 [6104:1108:1206/204345.613:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:43:46.84 [6104:1108:1206/204346.848:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:43:47.85 [6104:1108:1206/204347.853:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:43:49.21 [6104:1108:1206/204349.211:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:43:52.63 [6104:1108:1206/204352.634:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:43:55.13 [6104:1108:1206/204355.135:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:47:51.48 [6104:1108:1206/204751.487:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:47:52.89 [6104:1108:1206/204752.898:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:51:55.49 [6104:1108:1206/205155.492:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:51:56.96 [6104:1108:1206/205156.967:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:55:59.53 [6104:1108:1206/205559.532:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 20:56:00.65 [6104:1108:1206/205600.649:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 21:00:02.47 [6104:1108:1206/210002.477:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 21:00:03.83 [6104:1108:1206/210003.838:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 21:03:47.39 [6104:1108:1206/210347.395:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 21:04:06.75 [6104:1108:1206/210406.753:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 21:04:08.05 [6104:1108:1206/210408.052:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 21:04:09.34 [6104:1108:1206/210409.346:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 21:08:10.63 [6104:1108:1206/210810.635:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 21:08:12.01 [6104:1108:1206/210812.015:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+12월 06, 2019 21:08:13.08 [6104:1108:1206/210813.085:ERROR:page_load_metrics_update_dispatcher.cc(166)] Invalid first_paint 2.551 s for first_image_paint 2.489 s
+
+12월 07, 2019 13:05:28.98 NEW SESSION
+12월 07, 2019 13:05:28.98 [1048:1952:1207/130528.980:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 07, 2019 13:14:47.99 
+12월 07, 2019 13:14:47.99 KLIB_SelfTest return : KLR_OK
+12월 07, 2019 13:15:18.60 [6248:12340:1207/131518.606:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 07, 2019 13:20:10.17 
+12월 07, 2019 13:20:10.17 KLIB_SelfTest return : KLR_OK
+12월 07, 2019 13:33:31.34 [12748:7696:1207/133331.347:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 07, 2019 13:54:19.75 
+12월 07, 2019 13:54:19.75 KLIB_SelfTest return : KLR_OK
+12월 07, 2019 13:54:53.09 [7724:15176:1207/135453.092:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 07, 2019 13:58:09.65 
+12월 07, 2019 13:58:09.65 KLIB_SelfTest return : KLR_OK
+12월 07, 2019 14:00:30.91 [16364:6708:1207/140030.914:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 07, 2019 14:13:06.63 [16364:19296:1207/141306.638:ERROR:socket_stream.cc(218)] Closing stream with result -2
+12월 07, 2019 14:14:34.94 [16364:19296:1207/141434.939:ERROR:connection_factory_impl.cc(417)] Failed to connect to MCS endpoint with error -106
+
+12월 08, 2019 12:09:55.37 NEW SESSION
+12월 08, 2019 12:09:55.37 [4756:4944:1208/120955.355:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 08, 2019 20:36:20.46 [4756:16232:1208/203620.460:ERROR:CONSOLE(5190)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5190)
+12월 08, 2019 20:36:20.46 [4756:16232:1208/203620.460:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'exceptionDetails' of null", source:  (0)
+12월 08, 2019 23:42:43.05 
+12월 08, 2019 23:42:43.05 KLIB_SelfTest return : KLR_OK
+
+12월 09, 2019 09:05:46.27 NEW SESSION
+12월 09, 2019 09:05:46.27 [940:13600:1209/090546.271:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+
+12월 09, 2019 15:05:50.89 NEW SESSION
+12월 09, 2019 15:05:50.89 [8216:14780:1209/150550.888:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 09, 2019 16:58:41.71 
+12월 09, 2019 16:58:41.71 KLIB_SelfTest return : KLR_OK
+12월 09, 2019 16:59:59.53 [10076:14740:1209/165959.538:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 09, 2019 18:32:33.88 
+12월 09, 2019 18:32:33.88 KLIB_SelfTest return : KLR_OK
+12월 09, 2019 18:33:03.43 [12220:14604:1209/183303.429:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 09, 2019 19:05:12.93 
+12월 09, 2019 19:05:12.93 KLIB_SelfTest return : KLR_OK
+
+12월 09, 2019 19:34:42.58 NEW SESSION
+12월 09, 2019 19:34:42.58 [11420:15044:1209/193442.586:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 09, 2019 21:05:36.19 
+12월 09, 2019 21:05:36.19 KLIB_SelfTest return : KLR_OK
+
+12월 10, 2019 24:19:57.83 NEW SESSION
+12월 10, 2019 24:19:57.83 
+12월 10, 2019 24:19:57.84 KLIB_SelfTest return : KLR_OK
+
+12월 10, 2019 12:42:13.01 NEW SESSION
+12월 10, 2019 12:42:13.01 [3336:15688:1210/124213.016:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 10, 2019 16:42:03.82 [3336:1196:1210/164203.824:ERROR:socket_stream.cc(218)] Closing stream with result -2
+12월 10, 2019 18:54:07.89 
+12월 10, 2019 18:54:07.89 KLIB_SelfTest return : KLR_OK
+12월 10, 2019 18:54:45.01 [3884:4936:1210/185445.013:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 10, 2019 19:54:48.45 
+12월 10, 2019 19:54:48.45 KLIB_SelfTest return : KLR_OK
+
+12월 11, 2019 09:24:38.31 NEW SESSION
+12월 11, 2019 09:24:38.31 [15032:12716:1211/092438.310:ERROR:backend_impl.cc(1058)] Critical error found -8
+12월 11, 2019 09:24:53.37 [15032:11896:1211/092453.372:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 09:56:33.41 [15032:15968:1211/095633.408:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:33.54 [15032:15968:1211/095633.541:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:33.64 [15032:15968:1211/095633.642:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:33.77 [15032:15968:1211/095633.773:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:33.88 [15032:15968:1211/095633.886:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:33.99 [15032:15968:1211/095633.995:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:34.11 [15032:15968:1211/095634.110:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:34.22 [15032:15968:1211/095634.228:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:34.42 [15032:15968:1211/095634.420:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:34.52 [15032:15968:1211/095634.523:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:34.63 [15032:15968:1211/095634.629:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:34.86 [15032:15968:1211/095634.861:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:35.09 [15032:15968:1211/095635.089:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:35.22 [15032:15968:1211/095635.220:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:35.32 [15032:15968:1211/095635.328:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:35.47 [15032:15968:1211/095635.476:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:35.58 [15032:15968:1211/095635.581:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:35.73 [15032:15968:1211/095635.735:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:35.98 [15032:15968:1211/095635.985:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:36.09 [15032:15968:1211/095636.094:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:36.20 [15032:15968:1211/095636.208:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:36.31 [15032:15968:1211/095636.310:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:36.45 [15032:15968:1211/095636.458:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:36.56 [15032:15968:1211/095636.565:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:36.68 [15032:15968:1211/095636.683:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:37.53 [15032:15968:1211/095637.533:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:37.65 [15032:15968:1211/095637.652:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:37.76 [15032:15968:1211/095637.762:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.00 [15032:15968:1211/095638.005:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.12 [15032:15968:1211/095638.123:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.22 [15032:15968:1211/095638.228:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.33 [15032:15968:1211/095638.338:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.44 [15032:15968:1211/095638.440:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.54 [15032:15968:1211/095638.545:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.66 [15032:15968:1211/095638.660:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.76 [15032:15968:1211/095638.762:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.87 [15032:15968:1211/095638.873:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:38.97 [15032:15968:1211/095638.975:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:40.73 [15032:15968:1211/095640.729:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:40.85 [15032:15968:1211/095640.856:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:40.96 [15032:15968:1211/095640.960:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:41.24 [15032:15968:1211/095641.242:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:41.36 [15032:15968:1211/095641.361:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:41.47 [15032:15968:1211/095641.474:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:41.57 [15032:15968:1211/095641.575:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:41.68 [15032:15968:1211/095641.680:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:41.79 [15032:15968:1211/095641.792:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:44.36 [15032:15968:1211/095644.365:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:44.47 [15032:15968:1211/095644.471:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:44.57 [15032:15968:1211/095644.574:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:44.68 [15032:15968:1211/095644.682:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:44.79 [15032:15968:1211/095644.799:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:50.93 [15032:15968:1211/095650.936:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:51.04 [15032:15968:1211/095651.046:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:51.15 [15032:15968:1211/095651.154:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:51.25 [15032:15968:1211/095651.257:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:51.37 [15032:15968:1211/095651.370:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:51.48 [15032:15968:1211/095651.486:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:51.71 [15032:15968:1211/095651.719:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:51.83 [15032:15968:1211/095651.833:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:52.09 [15032:15968:1211/095652.092:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:52.22 [15032:15968:1211/095652.219:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:52.33 [15032:15968:1211/095652.333:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:52.50 [15032:15968:1211/095652.506:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:52.62 [15032:15968:1211/095652.621:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:52.73 [15032:15968:1211/095652.730:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:53.62 [15032:15968:1211/095653.620:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:53.74 [15032:15968:1211/095653.741:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:53.89 [15032:15968:1211/095653.890:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:54.00 [15032:15968:1211/095654.003:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:54.11 [15032:15968:1211/095654.110:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:54.22 [15032:15968:1211/095654.223:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:54.32 [15032:15968:1211/095654.326:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:54.43 [15032:15968:1211/095654.438:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:54.54 [15032:15968:1211/095654.542:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:54.65 [15032:15968:1211/095654.655:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:54.91 [15032:15968:1211/095654.913:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:55.04 [15032:15968:1211/095655.044:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:55.60 [15032:15968:1211/095655.599:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 09:56:55.72 [15032:15968:1211/095655.721:ERROR:CONSOLE(0)] "TypeError: Cannot read property 'expanded' of null", source:  (0)
+12월 11, 2019 10:03:26.34 
+12월 11, 2019 10:03:26.35 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 10:03:58.97 [4532:9604:1211/100358.974:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 10:15:01.72 
+12월 11, 2019 10:15:01.72 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 10:20:07.55 [4372:8072:1211/102007.556:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 10:55:07.97 
+12월 11, 2019 10:55:07.97 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 10:55:49.02 [5176:2548:1211/105549.027:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 11:06:25.34 
+12월 11, 2019 11:06:25.35 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 11:10:18.79 [228:5744:1211/111018.797:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 11:12:19.13 
+12월 11, 2019 11:12:19.13 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 11:13:35.68 [13132:4504:1211/111335.683:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 11:14:12.57 
+12월 11, 2019 11:14:12.57 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 11:15:04.00 [15524:5344:1211/111504.006:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 11:16:19.34 
+12월 11, 2019 11:16:19.34 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 11:17:29.79 [17092:10696:1211/111729.798:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 11:24:23.50 
+12월 11, 2019 11:24:23.50 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 11:29:55.21 [15096:9524:1211/112955.215:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 11:52:53.34 [15096:9640:1211/115253.345:ERROR:socket_stream.cc(218)] Closing stream with result -2
+12월 11, 2019 11:53:10.27 [15096:9640:1211/115310.276:ERROR:socket_stream.cc(218)] Closing stream with result -2
+12월 11, 2019 12:11:34.92 
+12월 11, 2019 12:11:34.92 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 12:12:46.31 [15700:16632:1211/121246.319:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 14:03:32.03 
+12월 11, 2019 14:03:32.03 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 14:04:08.52 [14820:4352:1211/140408.520:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 14:54:00.85 
+12월 11, 2019 14:54:00.85 KLIB_SelfTest return : KLR_OK
+
+12월 11, 2019 15:10:55.07 NEW SESSION
+12월 11, 2019 15:10:55.07 [13680:16880:1211/151055.076:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 18:19:35.82 
+12월 11, 2019 18:19:35.82 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 18:20:15.95 [8580:15432:1211/182015.950:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 19:04:32.01 
+12월 11, 2019 19:04:32.01 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 19:05:10.69 [16472:12940:1211/190510.699:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 19:09:47.67 
+12월 11, 2019 19:09:47.67 KLIB_SelfTest return : KLR_OK
+
+12월 11, 2019 21:19:21.18 NEW SESSION
+12월 11, 2019 21:19:21.18 [14136:9028:1211/211921.184:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 23:01:56.55 
+12월 11, 2019 23:01:56.55 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 23:03:02.87 [3880:16192:1211/230302.870:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 23:05:37.04 
+12월 11, 2019 23:05:37.04 KLIB_SelfTest return : KLR_OK
+12월 11, 2019 23:06:19.68 [9676:12068:1211/230619.686:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 11, 2019 23:43:40.87 
+12월 11, 2019 23:43:40.88 KLIB_SelfTest return : KLR_OK
+
+12월 13, 2019 16:52:52.63 NEW SESSION
+12월 13, 2019 16:52:52.63 [1908:17592:1213/165252.634:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 13, 2019 17:49:41.50 
+12월 13, 2019 17:49:41.50 KLIB_SelfTest return : KLR_OK
+
+12월 16, 2019 18:32:03.70 NEW SESSION
+12월 16, 2019 18:32:03.70 [3128:9928:1216/183203.702:ERROR:wmi_refresher.cc(129)] Unable to add the Win32_PerfRawData_PerfDisk_PhysicalDisk enum.
+12월 16, 2019 18:33:58.91 
+12월 16, 2019 18:33:58.91 KLIB_SelfTest return : KLR_OK
