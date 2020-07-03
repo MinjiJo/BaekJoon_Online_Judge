@@ -1,4 +1,8 @@
 *.class
+*.classpath
+*.settings
+*.gitattributes
+*.project
 /Main.class
 /BackJoon_1001.class
 /BackJoon_1000.class
